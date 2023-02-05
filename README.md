@@ -22,3 +22,10 @@ To "publish" the final `.pdf` you can use the following command which builds and
 ```
 make publish
 ```
+
+
+## Variations
+
+More specialized use cases can be found as separate branches:
+
+- Support for cyrillic characters: [lang/cyrillic](https://github.com/liontiger23/presentation-template/tree/lang/cyrillic)
