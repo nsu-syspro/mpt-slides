@@ -1,0 +1,13 @@
+---
+theme: default
+colortheme: default
+
+fontsize: 11pt
+aspectratio: 169
+listings: true
+
+mainfont: DejaVu Sans
+monofont: DejaVu Sans Mono
+mathfont: XITS Math
+lang: ru-RU
+---
