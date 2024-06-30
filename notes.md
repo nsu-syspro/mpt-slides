@@ -115,6 +115,13 @@ $ type echo
 
 $ type type
 
+$ # cp / mv / rm / mkdir / rmdir
+
+$ # touch
+
+$ # find
+
+$ # copy / paste
 ```
 
 > TODO: visual aids for everything
@@ -129,5 +136,15 @@ $ type type
 - `^D`
 - `^R`
 - HEREDOC
-- wildcards
+- wildcards / globs
 - `~`
+
+## Regex / editors
+
+- `tail`, `head`
+- Pagers: `less`, `more`
+- `nano`, `vim` TODO: more vim
+  - snake game with hjkl ??
+- `grep`, `sed`
+- Regex theory + practice problems on https://regexone.com
+  - Typical regex is unreadable but often useful for scripting
