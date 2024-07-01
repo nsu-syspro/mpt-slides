@@ -1,5 +1,9 @@
 # Notes
 
+## Helper materials
+
+- https://missing.csail.mit.edu
+
 ## Prerequisites
 
 > TODO: linux installation guide VM
@@ -44,7 +48,8 @@
 ## Shell
 
 - Command-line interpreters
-- Pipes / redirections
+- Pipes / redirections / `;` / `&&` / `||`
+- exit codes
 - Shortcuts / keybinds
 - Aliases
 - Wildcards
@@ -85,6 +90,8 @@ foobar
 
 $ tac
 
+$ tee
+
 $ ls
 
 $ ls -l
@@ -122,11 +129,32 @@ $ # touch
 $ # find
 
 $ # copy / paste
+
+$ # sort basename
+
+$ # diff / delta
 ```
+
+- challenge: what does `paste` command do?
+
+- ripgrep (grep)
+- fzf
+- broot (tree)
+- file managers (vifm / nnn / ranger / ~~mc~~ / ~~far~~)
 
 > TODO: visual aids for everything
 
 > Warn about `rm -rf`
+
+- `find -exec` / `| xargs`
+- processes
+  - `^Z`
+  - `fg` / `bg`
+- permissions
+- users
+- tmux
+- ssh
+- ssh game --- https://overthewire.org/wargames/bandit/
 
 ### Shortcuts / keybinds
 
@@ -147,4 +175,28 @@ $ # copy / paste
   - snake game with hjkl ??
 - `grep`, `sed`
 - Regex theory + practice problems on https://regexone.com
+  - Verification of regex and human-readable descriptions on https://regex101.com
   - Typical regex is unreadable but often useful for scripting
+- `| sort | uniq` ?
+- example for sorting students list by name ?
+  - TODO: add some issues and try to solve it
+
+## Bash scripting
+
+- https://devhints.io/bash
+- bash
+- `chmod +x`
+- shebang
+- script locations
+- script arguments
+- `$@`
+- variables
+- `"` and `'`
+- for loops
+- if statements
+- `$(...)`
+- `set -xe`
+- ShellCheck
+- source
+
+- wait-notify sample with multiple processes
