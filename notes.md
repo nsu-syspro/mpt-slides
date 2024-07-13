@@ -174,6 +174,7 @@ $ # diff / delta
 - `nano`, `vim` TODO: more vim
   - snake game with hjkl ??
 - `grep`, `sed`
+- Regex licensing https://regexlicensing.org
 - Regex theory + practice problems on https://regexone.com
   - Verification of regex and human-readable descriptions on https://regex101.com
   - Typical regex is unreadable but often useful for scripting
