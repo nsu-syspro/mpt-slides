@@ -1,7 +1,7 @@
 ############################
 # Usage
-# make         # converts all *.md files to *.pdf and *.pptx files using pandoc
-# make clean   # cleans up *.pdf and *.pptx artifacts
+# make         # converts all src/*.md files to publish/*.pdf files using pandoc
+# make clean   # cleans up publish/*.pdf artifacts
 ############################
 
 all:
@@ -13,16 +13,17 @@ all:
 PANDOC = pandoc
 
 PUBLISH_DIR = publish
+SRC_DIR = src
+COMMON_DIR = common
 
 ############################
 # Targets
 ############################
 
-SRC  = $(filter-out README.md, $(wildcard *.md) $(wildcard **/*.md))
+SRC  = $(wildcard $(SRC_DIR)/*.md)
 PDF  = $(SRC:.md=.pdf)
-PPTX = $(SRC:.md=.pptx)
 
-PDF_PUBLISH = $(addprefix $(PUBLISH_DIR)/,$(PDF))
+PDF_PUBLISH = $(PDF:$(SRC_DIR)/%=$(PUBLISH_DIR)/%)
 
 SVG = $(wildcard *.svg) $(wildcard **/*.svg)
 SVG_PDF = $(SVG:.svg=.pdf)
@@ -34,24 +35,23 @@ DOT_PDF = $(DOT:.dot=.pdf)
 # Goals
 ############################
 
-.PHONY: all clean pdf pptx publish
+.PHONY: all clean pdf
 .DEFAULT_GOAL := all
 
 all: pdf
 
 publish: $(PDF_PUBLISH)
 pdf:  $(PDF)
-pptx: $(PPTX)
 
 clean: 
 	@echo "Cleaning up..."
-	rm -rvf $(PDF) $(PPTX) $(SVG_PDF) $(DOT_PDF)
+	rm -rvf $(PDF) $(SVG_PDF) $(DOT_PDF)
 
 ############################
 # Publish patterns
 ############################
 
-$(PDF_PUBLISH): $(PUBLISH_DIR)/%.pdf: %.pdf
+$(PDF_PUBLISH): $(PUBLISH_DIR)/%.pdf: $(SRC_DIR)/%.pdf
 	@mkdir -p $(@D)
 	cp $< $@
 
@@ -63,9 +63,6 @@ PANDOC_ARGS :=
 
 $(PDF): %.pdf: %.md
 	$(PANDOC) $(PANDOC_ARGS) -t beamer --pdf-engine lualatex $< -o $@
-
-%.pptx: %.md
-	$(PANDOC) $(PANDOC_ARGS) $< -o $@
 	
 ############################
 # Image patterns
@@ -82,7 +79,6 @@ $(DOT_PDF): %.pdf: %.dot
 # Custom patterns
 ############################
 
-pres.pdf pres.pptx pres.odp: pres.yaml $(filter images/%,$(DOT_PDF) $(SVG_PDF))
-pres.pdf: pres-preamble.tex pres-template.tex
-pres.pdf: PANDOC_ARGS = pres.yaml -H pres-preamble.tex --listings --template pres-template.tex --slide-level=1
+$(PDF): $(COMMON_DIR)/pres.yaml $(COMMON_DIR)/pres-preamble.tex $(COMMON_DIR)/pres-template.tex $(DOT_PDF) $(SVG_PDF)
+$(PDF): PANDOC_ARGS = $(COMMON_DIR)/pres.yaml -H $(COMMON_DIR)/pres-preamble.tex --listings --template $(COMMON_DIR)/pres-template.tex --slide-level=1
 
