@@ -1,0 +1,36 @@
+name: Make presentation
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install pandoc
+      uses: pandoc/actions/setup@main
+
+    - name: Install latex
+      run: |
+        sudo apt-get update
+        sudo apt-get install texlive texlive-xetex texlive-lang-cyrillic texlive-fonts-recommended texlive-fonts-extra
+        # Verify all necessary tools are installed
+        pdflatex --version
+        bibtex --version
+
+    - name: Install Inkscape
+      run: |
+        sudo apt-get install inkscape
+
+    - name: Make pdf
+      run: make publish
+
+    - name: Archive published pdfs
+      uses: actions/upload-artifact@v4
+      with:
+        name: publish
+        path: |
+          publish
