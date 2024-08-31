@@ -16,7 +16,7 @@ jobs:
     - name: Install latex
       run: |
         sudo apt-get update
-        sudo apt-get install texlive texlive-xetex texlive-lang-cyrillic texlive-fonts-recommended texlive-fonts-extra
+        sudo apt-get install texlive-luatex texlive-lang-cyrillic texlive-fonts-recommended texlive-fonts-extra
         # Verify all necessary tools are installed
         pdflatex --version
         bibtex --version

@@ -62,7 +62,7 @@ $(PDF_PUBLISH): $(PUBLISH_DIR)/%.pdf: %.pdf
 PANDOC_ARGS :=
 
 $(PDF): %.pdf: %.md
-	$(PANDOC) $(PANDOC_ARGS) -t beamer --pdf-engine xelatex $< -o $@
+	$(PANDOC) $(PANDOC_ARGS) -t beamer --pdf-engine lualatex $< -o $@
 
 %.pptx: %.md
 	$(PANDOC) $(PANDOC_ARGS) $< -o $@
