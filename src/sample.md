@@ -61,7 +61,7 @@ def fact(n):
 \only<3-4>{
 \centering
 ```
-![](images/Markdown-mark.pdf){ width=60% }
+![](images/sample/Markdown-mark.pdf){ width=60% }
 ```{=latex}
 }
 ```
@@ -70,7 +70,7 @@ def fact(n):
 \only<4>{
 \centering
 ```
-![](images/Markdown-mark.svg.png){ width=60% }
+![](images/sample/Markdown-mark.svg.png){ width=60% }
 ```{=latex}
 }
 ```
