@@ -14,6 +14,7 @@ PANDOC = pandoc
 
 PUBLISH_DIR = publish
 SRC_DIR = src
+IMAGES_DIR = images
 COMMON_DIR = common
 
 ############################
@@ -24,12 +25,23 @@ SRC  = $(wildcard $(SRC_DIR)/*.md)
 PDF  = $(SRC:.md=.pdf)
 
 PDF_PUBLISH = $(PDF:$(SRC_DIR)/%=$(PUBLISH_DIR)/%)
+PDF_NAMES = $(PDF:$(SRC_DIR)/%.pdf=%)
 
-SVG = $(wildcard *.svg) $(wildcard **/*.svg)
-SVG_PDF = $(SVG:.svg=.pdf)
+PNG_ROOT = $(wildcard $(IMAGES_DIR)/*.png)
+PNG_TARGET = $(foreach NAME,$(PDF_NAMES),$(wildcard $(IMAGES_DIR)/$(NAME)/*.png))
+PNG = $(PNG_ROOT) $(PNG_TARGET)
 
-DOT = $(wildcard *.dot) $(wildcard **/*.dot)
-DOT_PDF = $(DOT:.dot=.pdf)
+SVG_ROOT = $(wildcard $(IMAGES_DIR)/*.svg)
+SVG_TARGET = $(foreach NAME,$(PDF_NAMES),$(wildcard $(IMAGES_DIR)/$(NAME)/*.svg))
+SVG_PDF_ROOT = $(SVG_ROOT:.svg=.pdf)
+SVG_PDF_TARGET = $(SVG_TARGET:.svg=.pdf)
+SVG_PDF = $(SVG_PDF_ROOT) $(SVG_PDF_TARGET)
+
+DOT_ROOT = $(wildcard $(IMAGES_DIR)/*.dot)
+DOT_TARGET = $(foreach NAME,$(PDF_NAMES),$(wildcard $(IMAGES_DIR)/$(NAME)/*.dot))
+DOT_PDF_ROOT = $(DOT_ROOT:.dot=.pdf)
+DOT_PDF_TARGET = $(DOT_TARGET:.dot=.pdf)
+DOT_PDF = $(DOT_PDF_ROOT) $(DOT_PDF_TARGET)
 
 ############################
 # Goals
@@ -79,6 +91,13 @@ $(DOT_PDF): %.pdf: %.dot
 # Custom patterns
 ############################
 
-$(PDF): $(COMMON_DIR)/pres.yaml $(COMMON_DIR)/pres-preamble.tex $(COMMON_DIR)/pres-template.tex $(DOT_PDF) $(SVG_PDF)
+
+TARGET_IMAGE_DEPS = $(filter $(IMAGES_DIR)/$*/%,$(DOT_PDF_TARGET) $(SVG_PDF_TARGET) $(PNG_TARGET))
+ROOT_IMAGE_DEPS = $(filter $(IMAGES_DIR)/%,$(DOT_PDF_ROOT) $(SVG_PDF_ROOT) $(PNG_ROOT))
+
+.SECONDEXPANSION:
+$(PDF): $(SRC_DIR)/%.pdf: $(ROOT_IMAGE_DEPS) $(COMMON_PNG_IMAGE_DEPS) $$(TARGET_IMAGE_DEPS)
+
+$(PDF): $(COMMON_DIR)/pres.yaml $(COMMON_DIR)/pres-preamble.tex $(COMMON_DIR)/pres-template.tex
 $(PDF): PANDOC_ARGS = $(COMMON_DIR)/pres.yaml -H $(COMMON_DIR)/pres-preamble.tex --listings --template $(COMMON_DIR)/pres-template.tex --slide-level=1
 
