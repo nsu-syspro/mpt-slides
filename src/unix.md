@@ -87,6 +87,8 @@ GNU/Linux как полноценной операционной системы.
 
 # Работа с командной строкой
 
+. . .
+
 ::::: columns
 
 :::: column
@@ -97,11 +99,21 @@ GNU/Linux как полноценной операционной системы.
   - alacritty
   - kitty
   - PuTTY
-- Интерпретатор команд (*shell*)
+
+. . .
+
+- Командная оболочка (*command-line interface*, *cli* или *shell*)
   - bash (Bourne-Again SHell)
   - sh (Bourne shell)
   - zsh (Z shell)
   - fish (friendly interactive shell)
+
+. . .
+
+- Интерпретатор команд
+
+. . .
+
 - Read-Eval-Print Loop (REPL)
 
 ::::
@@ -126,13 +138,96 @@ GNU/Linux как полноценной операционной системы.
 
 :::::
 
-# Команды
+# Команды {.fragile}
+
+:::::: columns
+
+::::: column
+
+```{=latex}
+\begin{onlyenv}<2-3>
+```
+
+:::: block
 
 ## Аргументы
 
+```{.bash columns=fixed}
+$ echo Hello World!
+Hello World!
+$ echo Hello    World!
+Hello World!
+$ echo "Hello    World!"
+Hello    World!
+$ echo 'Good   day!'
+Good   day!
+$ echo See\ \ \ you\ \ later
+See   you  later
+```
+
+::::
+
+```{=latex}
+\end{onlyenv}
+\begin{onlyenv}<4->
+```
+
+:::: block
+
+## Вывод команд
+
+```bash
+$ echo "Today: date"
+Today: date
+$ echo "Today: $date"
+Today: 
+$ echo "Today: $(date)"
+Today: Wed Aug 14 05:42:35 UTC 2024
+```
+
+::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+:::::
+::::: column
+
+```{=latex}
+\begin{uncoverenv}<3->
+```
+
+:::: block
+
 ## Подстановка
 
-## Стандартный ввод/вывод
+```{.bash columns=fixed}
+$ echo "$PATH"
+/usr/local/bin:/usr/bin:/bin
+$ echo '$PATH'
+$PATH
+$ echo $PATH
+/usr/local/bin:/usr/bin:/bin
+$ export TEST="a  b  c"
+$ echo $TEST
+a b c
+$ echo "$TEST"
+a  b  c
+```
+
+::::
+
+```{=latex}
+\end{uncoverenv}
+```
+
+:::::
+
+::::::
+
+
+# Стандартный ввод/вывод
 
 <!--
 - `date`, `echo`, `bc`
