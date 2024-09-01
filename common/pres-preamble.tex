@@ -1,4 +1,10 @@
 %\usepackage{xcolor}   % for \textcolor
+
+%% Fix for "Missing number, treated as zero spaces"
+%% when using consecutive spaces
+\newsavebox\grayarrow
+\sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{red}\hookrightarrow\space}}}
+
 \lstset{language=scala,
     basicstyle=\ttfamily,breaklines=false,
     captionpos=b,
@@ -8,7 +14,7 @@
     emph=[1]{ordered,by,break,dom,call},emphstyle=[1]{\bfseries},
     emph=[2]{super,final,protected,private,package},emphstyle=[2]{},
     emph=[3]{find,resolve},emphstyle=[3]{\itshape},
-    postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},
+    postbreak=\usebox\grayarrow,
     texcl=true,
 }
 
