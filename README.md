@@ -1,18 +1,19 @@
-# Presentation template
+# Презентации курса Инструментарий Современного Программиста
 
-Sample template to get you started with Pandoc + Beamer presentations.
+Отрендеренные презентации находятся в директории [publish](publish):
 
-Fork this repository to bootstrap your presentation.
-
-Source markdown files located at [src](src) directory.
-Result is published at [publish](publish) directory.
-
-Sample: [src/sample.md](src/sample.md)  
-Result: [publish/sample.pdf](publish/sample.pdf)
+- [Введение](publish/intro.pdf?raw=true)
+- [Основы работы с Unix](publish/unix.pdf?raw=true)
+- [Основы работы с текстом](publish/text.pdf?raw=true)
+- [Создание скриптов](publish/bash.pdf?raw=true)
+- [Системы контроля версий](publish/git.pdf?raw=true)
+- [Локализация и интернационализация программного обеспечения](publish/encoding.pdf?raw=true)
+- [Языки разметки](publish/markup.pdf?raw=true)
+- [Автоматизация сборки программного обеспечения](publish/automation.pdf?raw=true)
 
 ## Building
 
-Following command builds your presentations into `.pdf`:
+Following command builds presentations into `.pdf`:
 
 ```
 make
@@ -26,9 +27,3 @@ which can then be committed to the repo:
 ```
 make publish
 ```
-
-## Variations
-
-More specialized use cases can be found as separate branches:
-
-- Support for cyrillic characters: [lang/cyrillic](https://github.com/liontiger23/presentation-template/tree/lang/cyrillic)
