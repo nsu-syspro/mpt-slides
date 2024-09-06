@@ -229,6 +229,114 @@ a  b  c
 
 # Стандартный ввод/вывод
 
+```{=latex}
+\Begin{onlyenv}<1>
+```
+
+:::::: columns
+
+::::: column
+
+## Redirect stdout
+
+```bash
+$ echo "Foo bar" > foo.txt
+$ cat foo.txt
+Foo bar
+```
+
+## Redirect stdout with append
+
+```bash
+$ echo "Baz" >> foo.txt
+$ cat foo.txt
+Foo bar
+Baz
+```
+
+:::::
+\hfill
+\vline
+\hfill
+::::: column
+
+## Redirect stdin
+
+```bash
+$ cat < foo.txt
+Foo bar
+Baz
+```
+
+## Redirect both stdin and stdout
+
+```bash
+$ cat < foo.txt > bar.txt
+$ cat bar.txt
+Foo bar
+Baz
+```
+
+:::::
+
+::::::
+
+```{=latex}
+\End{onlyenv}
+```
+
+```{=latex}
+\Begin{onlyenv}<2>
+```
+
+:::::: columns
+
+::::: column
+
+## Redirect stderr
+
+```bash
+$ date foo
+date: invalid date 'foo'
+$ date foo >out.txt
+date: invalid date 'foo'
+$ cat out.txt
+$ date foo 2>err.txt
+$ cat err.txt
+date: invalid date 'foo'
+```
+
+:::::
+\hfill
+\vline
+\hfill
+::::: column
+
+## Redirect stderr to stdout
+
+```bash
+$ date foo >out.txt 2>&1
+$ cat out.txt
+date: invalid date 'foo'
+```
+
+## Redirect both stdout and stderr
+
+```bash
+$ date foo >out.txt 2>err.txt
+$ cat out.txt
+$ cat err.txt
+date: invalid date 'foo'
+```
+
+:::::
+
+::::::
+
+```{=latex}
+\End{onlyenv}
+```
+
 <!--
 - `date`, `echo`, `bc`
 - `$PATH`, `pwd`, `ls`, `cd`, `mkdir`, `tree`
