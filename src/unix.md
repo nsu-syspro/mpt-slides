@@ -343,7 +343,7 @@ date: invalid date 'foo'
 ::::: column
 
 ```bash
-$ echo "$PATH" | sed 's/:/\n/g'
+$ echo "$PATH"
 /usr/local/bin:/usr/bin:/bin
 $ echo "$PATH" | sed 's/:/\n/g'
 /usr/local/bin
