@@ -226,7 +226,6 @@ a  b  c
 
 ::::::
 
-
 # Стандартный ввод/вывод
 
 ```{=latex}
@@ -336,6 +335,94 @@ date: invalid date 'foo'
 ```{=latex}
 \End{onlyenv}
 ```
+
+# Конвейер (Pipeline)
+
+:::::: columns
+
+::::: column
+
+```bash
+$ echo "$PATH" | sed 's/:/\n/g'
+/usr/local/bin:/usr/bin:/bin
+$ echo "$PATH" | sed 's/:/\n/g'
+/usr/local/bin
+/usr/bin
+/bin
+$ echo "$PATH" | sed 's/:/\n/g' | sort
+/bin
+/usr/bin
+/usr/local/bin
+```
+
+:::::
+\hfill
+\vline
+\hfill
+::::: column
+
+\centering
+<!-- TODO: use TikZ -->
+![](images/unix/Pipeline.pdf){width=80%}
+
+:::::
+
+::::::
+
+# Композиция программ
+
+:::::: columns
+
+::::: column
+
+## Код возврата (Exit code)
+
+```bash
+$ date
+Sat Sep  7 02:37:24 UTC 2024
+$ echo $?
+0
+$ date foo
+date: invalid date 'foo'
+$ echo $?
+1
+```
+
+## Безусловное исполнение
+
+```bash
+$ date foo; echo $?
+date: invalid date 'foo'
+1
+```
+
+:::::
+\hfill
+\vline
+\hfill
+::::: column
+
+## Условное исполнение
+
+```bash
+$ echo "Hello" && date foo
+Hello
+date: invalid date 'foo'
+$ echo $?
+1
+$ date foo && echo "Hello"
+date: invalid date 'foo'
+$ echo $?
+1
+$ date foo || echo "Hello"
+date: invalid date 'foo'
+$ echo $?
+1
+```
+
+:::::
+
+::::::
 
 <!--
 - `date`, `echo`, `bc`
