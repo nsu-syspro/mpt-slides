@@ -5,8 +5,17 @@ subtitle: Инструментарий Современного Программ
 
 # История Unix
 
+```{=latex}
 \centering
-![](images/unix/Unix_timeline.pdf){width=60%}
+\vspace{-1em}
+\Begin{minipage}[c][\textheight][c]{.7\textwidth}
+\Begin{mdframed}[backgroundcolor=maininverted,linecolor=maininverted]
+```
+![](images/unix/Unix_timeline.pdf)
+```{=latex}
+\End{mdframed}
+\End{minipage}
+```
 
 ::: notes
 
@@ -474,9 +483,17 @@ $ echo $?
 
 # Горячие клавиши
 
+```{=latex}
 \centering
-
-[![](images/unix/moving_cli.png){width=80%}](https://gist.github.com/tuxfight3r/60051ac67c5f0445efee)
+\vspace{-1em}
+\Begin{minipage}[c][\textheight][c]{.9\textwidth}
+\Begin{mdframed}[backgroundcolor=maininverted,linecolor=maininverted]
+```
+[![](images/unix/moving_cli.png)](https://gist.github.com/tuxfight3r/60051ac67c5f0445efee)
+```{=latex}
+\End{mdframed}
+\End{minipage}
+```
 
 # {.plain}
 

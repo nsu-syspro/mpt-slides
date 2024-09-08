@@ -281,6 +281,22 @@ $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
+
+% set color scheme for dark/light modes
+$if(beamer)$
+$if(darkmode)$
+\colorlet{main}{maindark}
+\colorlet{maininverted}{maininverteddark}
+\colorlet{bgmain}{bgmaindark}
+\colorlet{bginverted}{bginverteddark}
+$else$
+\colorlet{main}{mainlight}
+\colorlet{maininverted}{maininvertedlight}
+\colorlet{bgmain}{bgmainlight}
+\colorlet{bginverted}{bginvertedlight}
+$endif$
+$endif$
+
 $if(lang)$
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}

@@ -27,14 +27,17 @@ title: Инструментарий Современного Программи�
 
 :::::
 
-\vline
-
 ::::: {.column width=60%}
 
 \centering
 
 ```{=latex}
+{
 \uncover<2->{
+\setbeamercolor{normal text}{fg=black}
+\colorbox{maininverted}{\begin{minipage}[c][0.6\textheight][c]
+{\textwidth-2\fboxsep-2\fboxrule-5pt\relax}
+\centering
 ```
 [![](images/intro/Stack_Overflow_logo.pdf){width=40%}](https://stackoverflow.com)
 \hspace{1em}
@@ -61,7 +64,7 @@ title: Инструментарий Современного Программи�
 `\uncover<7->{`{=latex}
 [![](images/intro/Git_logo.pdf){width=20%}](https://book.git-scm.com)
 `}`{=latex}
-`\raisebox{0.8em}{\Large\uncover<6->{`{=latex}
+`\raisebox{0.8em}{\color{black}\Large\uncover<6->{`{=latex}
 RegEx {
 [`grep`](https://www.gnu.org/software/grep/manual/grep.html) | 
 [`sed`](https://www.gnu.org/software/sed/manual/sed.html) }
@@ -81,10 +84,12 @@ RegEx {
 `\uncover<11->{`{=latex}
 [![](images/intro/Markdown_logo.pdf){width=15%}](https://commonmark.org)
 `}`{=latex}
-`\raisebox{0.6em}{\fontsize{32pt}{7.2}\selectfont\uncover<11->{`{=latex}
+`\raisebox{0.6em}{\color{black}\fontsize{32pt}{7.2}\selectfont\uncover<11->{`{=latex}
 [\LaTeX](https://www.latex-project.org)
 `}}`{=latex}
 ```{=latex}
+\End{minipage}}
+}
 }
 ```
 
