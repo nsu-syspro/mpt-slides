@@ -6,6 +6,30 @@ $endif$$if(dir)$$if(latex-dir-rtl)$
 \PassOptionsToPackage{RTLdocument}{bidi}
 $endif$$endif$%
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$if(beamer)$ignorenonframetext,$if(handout)$handout,$endif$$if(aspectratio)$aspectratio=$aspectratio$,$endif$$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+
+%%%%%%%%%%
+%% Colors
+
+%% TODO: use proper color names
+
+$if(darkmode)$
+\usepackage[mocha]{catppuccinpalette}
+%% Dark
+\colorlet{bgmain}{CtpBase}
+\colorlet{bginverted}{CtpSurface0}
+\colorlet{main}{CtpText}
+\colorlet{maininverted}{CtpText}
+$else$
+\usepackage[latte]{catppuccinpalette}
+%% Light
+\colorlet{bgmain}{white}
+\definecolor{bginverted}{RGB}{98,98,98}
+\colorlet{main}{black}
+\colorlet{maininverted}{white}
+$endif$
+
+%%%%%%%%%%
+
 $if(beamer)$
 $if(background-image)$
 \usebackgroundtemplate{%
@@ -281,21 +305,6 @@ $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
-
-% set color scheme for dark/light modes
-$if(beamer)$
-$if(darkmode)$
-\colorlet{main}{maindark}
-\colorlet{maininverted}{maininverteddark}
-\colorlet{bgmain}{bgmaindark}
-\colorlet{bginverted}{bginverteddark}
-$else$
-\colorlet{main}{mainlight}
-\colorlet{maininverted}{maininvertedlight}
-\colorlet{bgmain}{bgmainlight}
-\colorlet{bginverted}{bginvertedlight}
-$endif$
-$endif$
 
 $if(lang)$
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
