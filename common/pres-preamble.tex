@@ -38,6 +38,8 @@
 \makeatother
 %%%%%%%
 
+\usepackage{mdframed}
+
 %% Set numbered footnotes in minipages
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}
 
@@ -69,6 +71,25 @@
 %% Beamer stuff
 %%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%
+%% Colors
+
+%% TOOD: setup proper catppuccin color palette
+
+%% Dark
+\definecolor{bgmaindark}{HTML}{1E1E2E}
+\definecolor{bginverteddark}{HTML}{43465A}
+\definecolor{maindark}{HTML}{C6D0F5}
+\colorlet{maininverteddark}{maindark}
+
+%% Light
+\colorlet{bgmainlight}{white}
+\definecolor{bginvertedlight}{RGB}{98,98,98}
+\colorlet{mainlight}{black}
+\colorlet{maininvertedlight}{white}
+
+%%%%%%%%%%
+
 %% Change template for page number to be just current page number
 %% and increase vertical offset
 \setbeamertemplate{footline}{
@@ -83,9 +104,9 @@
 \setbeamerfont{page number in head/foot}{size=\footnotesize}
 \setbeamercolor{page number in head/foot}{fg=main}
 
-\colorlet{main}{black}
-\colorlet{maininverted}{white}
-\definecolor{bginverted}{RGB}{98,98,98}
+\setbeamercolor{normal text}{fg=main}
+\setbeamercolor{item}{fg=main}
+\setbeamercolor{background canvas}{bg=bgmain}
 
 \setbeamercolor*{palette primary}{fg=maininverted,bg=bginverted}
 
