@@ -3,18 +3,30 @@
 %% Fix for "Missing number, treated as zero spaces"
 %% when using consecutive spaces
 \newsavebox\grayarrow
-\sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{red}\hookrightarrow\space}}}
+\sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{CtpOverlay1}\hookrightarrow\space}}}
 
-\lstset{language=scala,
-    basicstyle=\ttfamily,breaklines=false,
-    captionpos=b,
-    numberstyle=\tiny\color{gray},
-    numbersep=5pt,
-    escapeinside={\[\]},columns=flexible,
-    emph=[1]{local},emphstyle=[1]{},
-    postbreak=\usebox\grayarrow,
-    showstringspaces=false,
-    texcl=true,
+\lstset{
+    % Note: \small\color{CtpText} in basicstyle interferes with style in inlined text
+    basicstyle   = {\ttfamily},
+    stringstyle  = {\color{CtpGreen}},
+    commentstyle = {\color{CtpOverlay1}},
+    keywordstyle = {\color{CtpMauve}},
+    keywordstyle = [2]{\color{CtpBlue}},
+    keywordstyle = [3]{\color{CtpYellow}},
+    keywordstyle = [4]{\color{CtpLavender}},
+    keywordstyle = [5]{\color{CtpPeach}},
+    keywordstyle = [6]{\color{CtpTeal}},
+    captionpos   = b,
+    breaklines   = false,
+    numberstyle  = \tiny\color{CtpOverlay1},
+    numbersep    = 5pt,
+    escapeinside = {\[\]},
+    columns      = flexible,
+    emph         = [7]{local},
+    emphstyle    = [7]{},
+    postbreak    = \usebox\grayarrow,
+    showstringspaces = false,
+    texcl        = true,
 }
 
 %%%%%%%
@@ -71,25 +83,6 @@
 %%%%%%%%%%%%%%%%%%%
 %% Beamer stuff
 %%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%
-%% Colors
-
-%% TOOD: setup proper catppuccin color palette
-
-%% Dark
-\definecolor{bgmaindark}{HTML}{1E1E2E}
-\definecolor{bginverteddark}{HTML}{43465A}
-\definecolor{maindark}{HTML}{C6D0F5}
-\colorlet{maininverteddark}{maindark}
-
-%% Light
-\colorlet{bgmainlight}{white}
-\definecolor{bginvertedlight}{RGB}{98,98,98}
-\colorlet{mainlight}{black}
-\colorlet{maininvertedlight}{white}
-
-%%%%%%%%%%
 
 %% Change template for page number to be just current page number
 %% and increase vertical offset
