@@ -6,6 +6,7 @@
 \sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{CtpOverlay1}\hookrightarrow\space}}}
 
 \lstset{
+    language     = bash,
     % Note: \small\color{CtpText} in basicstyle interferes with style in inlined text
     basicstyle   = {\ttfamily},
     stringstyle  = {\color{CtpGreen}},
@@ -22,8 +23,8 @@
     numbersep    = 5pt,
     escapeinside = {\[\]},
     columns      = flexible,
-    emph         = [7]{local},
-    emphstyle    = [7]{},
+    emph         = [0]{local},
+    emphstyle    = [0]{},
     postbreak    = \usebox\grayarrow,
     showstringspaces = false,
     texcl        = true,
