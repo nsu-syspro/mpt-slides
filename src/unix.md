@@ -3,7 +3,7 @@ title: Основы работы с Unix
 subtitle: Инструментарий Современного Программиста
 ---
 
-# История Unix
+# История Unix {.fragile}
 
 ```{=latex}
 \centering
@@ -481,7 +481,7 @@ $ echo $?
 
 ::::::
 
-# Горячие клавиши
+# Горячие клавиши {.fragile}
 
 ```{=latex}
 \centering
