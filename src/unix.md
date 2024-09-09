@@ -211,6 +211,8 @@ Today: Wed Aug 14 05:42:35 UTC 2024
 
 ## Подстановка
 
+`\lstset{style=bash}`{=latex}
+
 ```{.bash columns=fixed}
 $ echo "$PATH"
 /usr/local/bin:/usr/bin:/bin
@@ -224,6 +226,8 @@ a b c
 $ echo "$TEST"
 a  b  c
 ```
+
+`\lstset{style=default}`{=latex}
 
 ::::
 
@@ -351,6 +355,8 @@ date: invalid date 'foo'
 
 ::::: column
 
+`\lstset{style=bash}`{=latex}
+
 ```bash
 $ echo "$PATH"
 /usr/local/bin:/usr/bin:/bin
@@ -363,6 +369,8 @@ $ echo "$PATH" | sed 's/:/\n/g' | sort
 /usr/bin
 /usr/local/bin
 ```
+
+`\lstset{style=default}`{=latex}
 
 :::::
 \hfill
