@@ -5,7 +5,8 @@
 \newsavebox\grayarrow
 \sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{CtpOverlay1}\hookrightarrow\space}}}
 
-\lstset{
+
+\lstdefinestyle{default}{
     % Note: \small\color{CtpText} in basicstyle interferes with style in inlined text
     basicstyle   = {\ttfamily},
     stringstyle  = {\color{CtpGreen}},
@@ -22,12 +23,19 @@
     numbersep    = 5pt,
     escapeinside = {\$\$},
     columns      = flexible,
-    emph         = [7]{local},
-    emphstyle    = [7]{},
     postbreak    = \usebox\grayarrow,
     showstringspaces = false,
     texcl        = true,
 }
+
+\lstdefinestyle{bash}{
+    style = default,
+    language  = bash,
+    emph      = [0]{local},
+    emphstyle = [0]{},
+}
+
+\lstset{style=default}
 
 %%%%%%%
 %% Allow skipping line numbers -- https://tex.stackexchange.com/a/215752
