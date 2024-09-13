@@ -15,8 +15,43 @@ subtitle: Инструментарий Современного Программ
 \Begin{onlyenv}<1>
 ```
 
-- Интерактивный туториал с практическими заданиями: <http://regexone.com>
-- Верификация и описание выражений: <http://regex101.com>
+:::::: columns
+
+:::: column
+
+## \centering Интерактивный туториал с практическими заданиями
+
+```{=latex}
+\begin{minipage}[c][.5\textheight][c]{\linewidth}
+\centering
+\qrcode[height=3cm]{https://regexone.com}
+\vspace{1em}
+```
+<https://regexone.com>
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: column
+
+## \centering Верификация и описание выражений
+
+```{=latex}
+\vspace{1.5em}
+\begin{minipage}[c][.5\textheight][c]{\linewidth}
+\centering
+\qrcode[height=3cm]{https://regex101.com}
+\vspace{1em}
+```
+<https://regex101.com>
+```{=latex}
+\end{minipage}
+```
+
+::::
+
+::::::
 
 ```{=latex}
 \End{onlyenv}
@@ -25,11 +60,6 @@ subtitle: Инструментарий Современного Программ
 ```{=latex}
 \Begin{onlyenv}<2>
 ```
-
-\centering
-Интерактивный туториал с практическими заданиями <http://regexone.com>
-
-\vspace{-1em}
 
 :::::: columns
 
@@ -70,6 +100,10 @@ subtitle: Инструментарий Современного Программ
 :::::
 
 ::::::
+
+\centering
+
+<https://regexone.com>
 
 ```{=latex}
 \End{onlyenv}
