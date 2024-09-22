@@ -6,7 +6,6 @@ subtitle: Инструментарий Современного Программ
 # Просмотр текста
 
 :::::: columns
-
 :::: column
 
 <!-- TODO: move somewhere else
@@ -49,7 +48,6 @@ $ cat long.txt | tail -n5
 ```
 
 ::::
-
 ::::::
 
 
@@ -60,7 +58,6 @@ $ cat long.txt | tail -n5
 ```
 
 :::::: columns
-
 :::: column
 
 ## \centering Интерактивный туториал с практическими заданиями
@@ -94,7 +91,6 @@ $ cat long.txt | tail -n5
 ```
 
 ::::
-
 ::::::
 
 ```{=latex}
@@ -106,7 +102,6 @@ $ cat long.txt | tail -n5
 ```
 
 :::::: columns
-
 ::::: column
 
 | Regex | Семантика |
@@ -142,7 +137,6 @@ $ cat long.txt | tail -n5
 
 
 :::::
-
 ::::::
 
 \centering
@@ -158,7 +152,6 @@ $ cat long.txt | tail -n5
 ```
 
 :::::: columns
-
 ::::: column
 
 ## grep
@@ -203,9 +196,7 @@ one one
 one 2
 ```
 
-
 :::::
-
 ::::::
 
 ```{=latex}
@@ -221,7 +212,6 @@ one 2
 ```
 
 :::::: columns
-
 :::: column
 
 ## Режимы
@@ -257,7 +247,6 @@ one 2
 
 
 ::::
-
 ::::::
 
 ```{=latex}
@@ -270,7 +259,6 @@ one 2
 ```
 
 :::::: columns
-
 :::: column
 
 ## \color{CtpTeal} Insert
@@ -305,33 +293,70 @@ one 2
 
 
 ::::
-
 ::::::
 
 ```{=latex}
 \End{onlyenv}
 ```
 
+# Полезные ресурсы
+
+`\lstset{style=default,basicstyle={\ttfamily\color{CtpPeach}}}`{=latex}
+
+## \centering `vimtutor`
+
+\centering
+Oфициальный туториал, идет вместе с `vim`
+
+:::::: columns
+:::: column
+
+## \centering Vim Tips Wiki
+
 ```{=latex}
-\Begin{onlyenv}<3>
+\vspace{1em}
+\centering
+\qrcode[height=1.5cm]{http://vim.wikia.com/wiki/Vim_Tips_Wiki}
+\vspace{1em}
 ```
+<http://vim.wikia.com/wiki/Vim_Tips_Wiki>
 
-:::: block
+## \centering Vim cheatsheet
 
-## Полезные материалы
-
-- `vimtutor` --- официальный туториал, идет вместе с `vim`
-- [Vim Adventures](https://vim-adventures.com) --- игра для обучения работе с Vim
-- [Vim golf](https://www.vimgolf.com) --- аналог [Code golf](https://en.wikipedia.org/wiki/Code_golf) для Vim
-- [Vim Tips Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
+```{=latex}
+\vspace{1em}
+\centering
+\qrcode[height=1.5cm]{https://devhints.io/vim}
+\vspace{1em}
+```
+<https://devhints.io/vim>
 
 ::::
+:::: column
+
+## \centering Vim adventures
 
 ```{=latex}
-\End{onlyenv}
+\vspace{1em}
+\centering
+\qrcode[height=1.5cm]{https://vim-adventures.com}
+\vspace{1em}
 ```
+<https://vim-adventures.com>
+
+## \centering Vim golf
+
+```{=latex}
+\vspace{1em}
+\centering
+\qrcode[height=1.5cm]{https://www.vimgolf.com}
+\vspace{1em}
+```
+<https://www.vimgolf.com>
 
 
+::::
+::::::
 
 # {.plain}
 
