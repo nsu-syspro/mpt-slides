@@ -151,6 +151,7 @@ Hello World!
 ## `script.sh`
 
 ```{=latex}
+\vspace{-0.5em}
 \lstset{style=default,basicstyle={\small\ttfamily}}
 ```
 
@@ -285,6 +286,7 @@ hello "Sys.Pro"
 ## Вывод
 
 ```{=latex}
+\vspace{-0.5em}
 \Begin{onlyenv}<1>
 ```
 
