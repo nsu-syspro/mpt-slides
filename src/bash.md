@@ -404,10 +404,10 @@ Hello Sys.Pro!
 ```{=latex}
 \vspace{1em}
 \centering
-\qrcode[height=3cm]{https://www.gnu.org/software/bash/manual/html_node/index.html}
+\qrcode[height=3cm]{https://www.gnu.org/software/bash/manual/bash.html}
 \vspace{1em}
 ```
-<https://www.gnu.org/software/bash/manual/html_node/index.html>
+<https://www.gnu.org/software/bash/manual/bash.html>
 
 
 ::::
