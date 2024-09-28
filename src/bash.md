@@ -381,6 +381,38 @@ Hello Sys.Pro!
 ::::
 ::::::
 
+# Полезные ресурсы
+
+:::::: columns
+:::: column
+
+## \centering Bash cheatsheet
+
+```{=latex}
+\vspace{1em}
+\centering
+\qrcode[height=3cm]{https://devhints.io/bash}
+\vspace{1em}
+```
+<https://devhints.io/bash>
+
+::::
+:::: column
+
+## \centering Bash Reference Manual
+
+```{=latex}
+\vspace{1em}
+\centering
+\qrcode[height=3cm]{https://www.gnu.org/software/bash/manual/html_node/index.html}
+\vspace{1em}
+```
+<https://www.gnu.org/software/bash/manual/html_node/index.html>
+
+
+::::
+::::::
+
 
 # {.plain}
 
