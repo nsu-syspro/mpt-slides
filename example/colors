@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for i in {0..255}; do
+  printf "\e[38;5;${i}m%3i\e[0m " "$i"
+  if [ $(( $i % 16 )) -eq 15 ]; then
+    printf "\n"
+  fi
+done

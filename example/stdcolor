@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Symbol $ is important here as it keeps proper escape sequences
+RED=$'\e[31m'
+GREEN=$'\e[32m'
+CYAN=$'\e[36m'
+ENDCOLOR=$'\e[0m'
+
+# Preserve exit code through pipes
+set -o pipefail
+
+# stderr -> stdin of sed; stdout of sed -> stderr
+# stdout -> stdin of sed; stdout of sed -> stdout
+bash -c "$@" \
+  2> >(sed -e "s/^\(.*\)\$/$RED\1$ENDCOLOR/" >&2) \
+  | sed -e "s/^\(.*\)\$/$GREEN\1$ENDCOLOR/"
+
+# Preserve exit code for displaying it
+EXIT=$?
+
+# If non-zero exit code, print with color
+if [ $EXIT -ne 0 ]; then
+  echo "$CYAN[$EXIT]$ENDCOLOR"
+fi
+
+# Restore exit code
+exit $EXIT
