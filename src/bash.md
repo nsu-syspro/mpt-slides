@@ -210,7 +210,7 @@ fi
 ```bash
 case "$1" in
   foo | bar)
-    echo "Pass $var"
+    echo "Pass $1"
     ;;
   *)
     echo "Fail"
@@ -227,7 +227,7 @@ esac
 ```
 
 ```bash
-for arg in $@; do
+for arg in "$@"; do
   echo "$arg"
 done
 ```
