@@ -160,14 +160,14 @@ subtitle: Инструментарий Современного Программ
 
 # Команды Git
 
-- `git init`/`git clone`
+- `git init` / `git clone`
 - `git status`
 - `git log`
 - `git add`
 - `git restore`
 - `git commit`
 - `git push`
-- `git switch`/`git checkout`
+- `git switch` / `git checkout`
 - `git merge`
 - `git cherry-pick`
 - `git rebase`
