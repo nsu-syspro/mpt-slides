@@ -32,6 +32,23 @@ subtitle: Инструментарий Современного Программ
 
 # Системы контроля версий
 
+## Основные концепции
+
+- `{\color{CtpTeal} Система контроля версий / Version control system (VCS)}`{=latex}
+- `{\color{CtpTeal} Изменение / changeset / patch}`{=latex}: добавление или удаление строк
+  - ```{style=diff}
+    -echo "Hello World!"
+    +echo "Hello Sys.Pro!"
+    ```
+- `{\color{CtpTeal} Коммит / версия / ревизия}`{=latex}: набор изменений
+- `{\color{CtpTeal} Репозиторий}`{=latex}: база данных всех изменений
+- `{\color{CtpTeal} История}`{=latex}: последовательность коммитов
+- `{\color{CtpTeal} Ветка / branch}`{=latex}: история относящаяся к конкретной задаче / фиче
+- `{\color{CtpTeal} Слияние}`{=latex}: объединение историй двух веток в одну
+- `{\color{CtpTeal} Конфликт}`{=latex}: изменения в одной и той же строке при слиянии
+
+# Системы контроля версий
+
 <!-- TODO: rewrite using TikZ -->
 
 :::::: columns
@@ -63,18 +80,6 @@ subtitle: Инструментарий Современного Программ
 
 \centering\footnotesize
 <https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control>
-
-# Основные концепции
-
-- `{\color{CtpTeal} Изменение}`{=latex}: добавление или удаление строки
-- `{\color{CtpTeal} Коммит}`{=latex}: набор изменений
-- `{\color{CtpTeal} История}`{=latex}: последовательность коммитов
-- `{\color{CtpTeal} Ветка}`{=latex}: ветка
-- `{\color{CtpTeal} Репозиторий}`{=latex}: хранилище истории
-  - `{\color{CtpTeal} Локальный}`{=latex} на рабочем компьютере 
-  - `{\color{CtpTeal} Удаленный}`{=latex} на сервере
-- `{\color{CtpTeal} Отправка}`{=latex} изменений на удаленный репозиторий
-- `{\color{CtpTeal} Получение}`{=latex} изменений с удаленного репозитория
 
 # Команды Git
 
