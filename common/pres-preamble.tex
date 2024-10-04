@@ -35,6 +35,15 @@
     emphstyle = [0]{},
 }
 
+\lstdefinestyle{diff}{
+  style=default,
+  morecomment=[n][\color{CtpTeal}]{@@}{@@\^^M},     % group identifier
+  morecomment=[n][\color{CtpRed}]{-}{\^^M},         % deleted lines 
+  morecomment=[n][\color{CtpGreen}]{+}{\^^M},       % added lines
+  morecomment=[n][\color{CtpOverlay1}]{---}{\^^M}, % Diff lheader lines (must appear after +,-)
+  morecomment=[n][\color{CtpOverlay1}]{+++}{\^^M},
+}
+
 \lstset{style=default}
 
 %%%%%%%
