@@ -29,6 +29,12 @@ title: Инструментарий Современного Программи�
 
 ::::: {.column width=60%}
 
+```{=latex}
+\hypersetup{
+  urlcolor=main
+}
+```
+
 \centering
 
 ```{=latex}
