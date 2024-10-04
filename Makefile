@@ -85,7 +85,9 @@ $(PDF_DARK): %-dark.pdf: %.md
 ############################
 
 $(SVG_PDF): %.pdf: %.svg
-	inkscape -D $< -o $@
+	# SELF_CALL is workaround for running inkscape in parallel
+	# See https://gitlab.com/inkscape/inkscape/-/issues/4716
+	SELF_CALL=no inkscape -D $< -o $@
 
 
 $(DOT_PDF): %.pdf: %.dot
