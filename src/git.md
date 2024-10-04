@@ -30,11 +30,46 @@ subtitle: Инструментарий Современного Программ
 ::::
 ::::::
 
+# Системы контроля версий
+
+<!-- TODO: rewrite using TikZ -->
+
+:::::: columns
+:::: column
+
+## \centering Локальные
+
+\vspace{1em}
+\centering
+![](images/git/local.png){width=50%}
+
+## \centering Централизованные
+
+\vspace{1em}
+\centering
+![](images/git/centralized.png){width=65%}
+
+::::
+:::: column
+
+## \centering Распределенные
+
+\vspace{1em}
+\centering
+![](images/git/distributed.png){width=70%}
+
+::::
+::::::
+
+\centering\footnotesize
+<https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control>
+
 # Основные концепции
 
 - `{\color{CtpTeal} Изменение}`{=latex}: добавление или удаление строки
 - `{\color{CtpTeal} Коммит}`{=latex}: набор изменений
 - `{\color{CtpTeal} История}`{=latex}: последовательность коммитов
+- `{\color{CtpTeal} Ветка}`{=latex}: ветка
 - `{\color{CtpTeal} Репозиторий}`{=latex}: хранилище истории
   - `{\color{CtpTeal} Локальный}`{=latex} на рабочем компьютере 
   - `{\color{CtpTeal} Удаленный}`{=latex} на сервере
