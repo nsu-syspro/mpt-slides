@@ -5,6 +5,11 @@ subtitle: Инструментарий Современного Программ
 
 # Мотивация
 
+```{=latex}
+%% Note: has to be in non-fragile frame or before \begin{document}
+\newsavebox{\difflisting}
+```
+
 :::::: columns
 :::: column
 
@@ -30,22 +35,94 @@ subtitle: Инструментарий Современного Программ
 ::::
 ::::::
 
-# Системы контроля версий
+# Основные концепции {.fragile}
 
-## Основные концепции
+:::::: columns
+:::: {.column width=53%}
 
-- `{\color{CtpTeal} Система контроля версий / Version control system (VCS)}`{=latex}
-- `{\color{CtpTeal} Изменение / changeset / patch}`{=latex}: добавление или удаление строк
-  - ```{style=diff}
-    -echo "Hello World!"
-    +echo "Hello Sys.Pro!"
-    ```
-- `{\color{CtpTeal} Коммит / версия / ревизия}`{=latex}: набор изменений
-- `{\color{CtpTeal} Репозиторий}`{=latex}: база данных всех изменений
-- `{\color{CtpTeal} История}`{=latex}: последовательность коммитов
-- `{\color{CtpTeal} Ветка / branch}`{=latex}: история относящаяся к конкретной задаче / фиче
-- `{\color{CtpTeal} Слияние}`{=latex}: объединение историй двух веток в одну
-- `{\color{CtpTeal} Конфликт}`{=latex}: изменения в одной и той же строке при слиянии
+## \centering Система контроля версий `\\ \small`{=latex} Version control system, VCS
+
+- `\uncover<2->{{\color{CtpTeal} Изменение / changeset / patch}`{=latex}: добавление или удаление строк`}`{=latex}
+- `\uncover<3->{{\color{CtpTeal} Коммит / версия / ревизия}`{=latex}: набор изменений`}`{=latex}
+- `\uncover<4->{{\color{CtpTeal} История}`{=latex}: последовательность коммитов`}`{=latex}
+- `\uncover<5->{{\color{CtpTeal} Ветка / branch}`{=latex}: история относящаяся к конкретной задаче / фиче`}`{=latex}
+- `\uncover<6->{{\color{CtpTeal} Слияние}`{=latex}: объединение историй двух веток в одну`}`{=latex}
+- `\uncover<6->{{\color{CtpTeal} Конфликт}`{=latex}: изменения в одной и той же строке при слиянии`}`{=latex}
+- `\uncover<7->{{\color{CtpTeal} Репозиторий}`{=latex}: база данных всех изменений`}`{=latex}
+
+::::
+:::: {.column width=47%}
+
+```{=latex}
+\vspace{1em}
+\centering
+
+\begin{lrbox}{\difflisting}
+\scriptsize
+\begin{lstlisting}[style=diff]
+-echo "Hello World!"
++echo "Hello Sys.Pro!"
+\end{lstlisting}
+\end{lrbox}
+
+\begin{tikzpicture}[
+    ->,
+    every node/.style={font=\ttfamily\footnotesize},
+    commit/.style={draw,circle,minimum height=2em,minimum width=2em}
+]
+
+  \matrix [row sep=2em, column sep=2em,ampersand replacement=\&] {
+                                       \& \uncover<6->{\node [commit] (M) {};} \\
+  \uncover<5->{\node [commit] (E) {};} \& \uncover<3->{\node [commit] (C) {};} \\
+  \uncover<5->{\node [commit] (D) {};} \& \uncover<4->{\node [commit] (B) {};} \\
+                                       \& \uncover<4->{\node [commit] (A) {};} \\
+  };
+  \uncover<4->{
+  \graph [use existing nodes] {
+      A -> B -> C
+  };
+  }
+  \uncover<5->{
+  \graph [use existing nodes] {
+      A -> D -> E
+  };
+  }
+  \uncover<6->{
+  \graph [use existing nodes] {
+      {E, C} -> M
+  };
+  }
+
+  \uncover<5>{
+  \node (main) [draw,above right=1em of C,anchor=south] {main};
+  }
+
+  \uncover<5->{
+  \node (feature) [draw,above left=1em of E,anchor=south] {feature};
+  }
+
+  \uncover<6->{
+  \node (main merge) [draw,above right=1em of M,anchor=south] {main};
+  }
+
+  \uncover<2->{
+  \coordinate (mid) at ($(C) !0.5! (B)$);
+  \node (diff) [right=2em of mid,text depth=1em,font=\scriptsize,text height=1em] {\usebox{\difflisting}
+  };
+  \node (diff file) [above=0 of diff] {a.sh};
+  \draw [-] (diff.north west) -- (diff.north east);
+  \node [draw,inner sep=0,fit=(diff file) (diff)] {};
+  }
+
+  \uncover<7->{
+  \node [draw,label={Repository},fit=(diff) (main merge) (A) (feature)] {};
+  }
+
+\end{tikzpicture}
+```
+
+::::
+::::::
 
 # Системы контроля версий
 
