@@ -158,6 +158,130 @@ subtitle: Инструментарий Современного Программ
 \centering\footnotesize
 <https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control>
 
+# Git internals {.fragile}
+
+:::::: columns
+:::: {.column width=53%}
+
+## \centering Хранение данных
+
+- Хранится не разница (`{\color{CtpTeal}diff}`{=latex}) файлов,
+  а полный снимок (`{\color{CtpTeal}snapshot}`{=latex}) файловой структуры в виде *дерева*
+- `\uncover<2->{{\color{CtpTeal} Blob}`{=latex}: содержимое одного файла`}`{=latex}
+- `\uncover<3->{{\color{CtpTeal} Tree}`{=latex}: директория указывающая на blob'ы, находящихся в ней файлов
+  и на tree поддиректорий`}`{=latex}
+- `\uncover<4->{{\color{CtpTeal} Коммит}`{=latex}: конкретный снимок, указывающий на соответствующий root tree
+  и на предыдущий коммит в истории`}`{=latex}
+- `\uncover<5->{{\color{CtpTeal} Ветка}`{=latex}: указатель на конкретный коммит`}`{=latex}
+- `\uncover<5->{{\color{CtpTeal} HEAD}`{=latex}: указатель на *текущий* коммит`}`{=latex}
+
+::::
+\hfill
+\vline
+:::: {.column width=45%}
+
+```{=latex}
+\vspace{1em}
+\centering
+
+\begin{lrbox}{\difflisting}
+\scriptsize
+\begin{lstlisting}[style=diff]
+-echo "Hello World!"
++echo "Hello Sys.Pro!"
+\end{lstlisting}
+\end{lrbox}
+
+\begin{tikzpicture}[
+    ->,
+    every node/.style={font=\ttfamily\footnotesize},
+    commit/.style={draw,fill=CtpPeach,circle,minimum height=1.5em,minimum width=1.5em},
+    tree/.style={draw,fill=CtpSky,isosceles triangle,isosceles triangle apex angle=60,rotate=90,minimum height=1em,minimum width=1em},
+    blob/.style={draw,fill=CtpMaroon,minimum height=1.2em,minimum width=1.2em},
+    branch/.style={draw},
+]
+
+  \matrix [row sep=1.5em, column sep=1em,ampersand replacement=\&] {
+  \&
+  \uncover<5->{\node [branch] (main) {main};} \&
+  \uncover<6->{\node [branch] (HEAD) {HEAD};} \&
+  \\
+
+  \uncover<4->{\node [commit] (C1) {};} \&
+  \uncover<4->{\node [commit] (C2) {};} \&
+  \uncover<7->{\node [commit] (C3) {};} \&
+  \\
+
+  \&
+  \uncover<3->{\node [tree] (R2) {};} \&
+  \uncover<7->{\node [tree] (R3) {};} \&
+  \\
+
+  \uncover<3->{\node [tree] (T1) {};} \&
+  \uncover<3->{\node [tree] (T2) {};} \&
+  \uncover<7->{\node [tree] (T3) {};} \&
+  \\
+
+  \uncover<3->{\node []  (T0) {...};} \&
+  \uncover<2->{\node [blob,label=below:a.txt]  (A1) {};} \&
+  \uncover<2->{\node [blob,label=below:b.txt]  (B1) {};} \&
+  \uncover<7->{\node [blob,label=below:a.txt'] (A2) {};} \\
+  };
+
+  \uncover<3->{\node (R2 label) [left=0.5em of R2,yshift=1em] {root};}
+  \uncover<3->{\node (T1 label) [left=0.5em of T1,yshift=1em] {bar};}
+  \uncover<3->{\node (T2 label) [left=0.5em of T2,yshift=1em] {foo};}
+  \uncover<7->{\node (T3 label) [left=0.5em of T3,yshift=1em] {foo};}
+
+  \uncover<3->{
+  \graph [use existing nodes] {
+      R2 -> {{T1 -> T0}, T2 -> {A1, B1}}
+  };
+  }
+  \uncover<4->{
+  \graph [use existing nodes] {
+      C2 -> {R2, C1}
+  };
+  }
+  \uncover<5-6>{
+  \graph [use existing nodes] {
+      main -> C2
+  };
+  }
+  \uncover<6>{
+  \graph [use existing nodes] {
+      HEAD -> C2
+  };
+  }
+  \uncover<7->{
+  \graph [use existing nodes] {
+      {main, HEAD} -> C3 -> {C2, R3 -> {T1, T3 -> {B1, A2}}}
+  };
+  }
+
+\end{tikzpicture}
+
+\hrule{}
+\vspace{1em}
+
+\begin{figure}
+\centering
+\footnotesize
+\begin{BVerbatim}
+.
+├── bar
+│   └── ...
+└── foo
+    ├── a.txt
+    └── b.txt
+\end{BVerbatim}
+\end{figure}
+```
+
+::::
+::::::
+
+
 # Команды Git
 
 - `git init` / `git clone`
