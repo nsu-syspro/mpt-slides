@@ -281,21 +281,6 @@ subtitle: Инструментарий Современного Программ
 ::::
 ::::::
 
-
-# Команды Git
-
-- `git init` / `git clone`
-- `git status`
-- `git log`
-- `git add`
-- `git restore`
-- `git commit`
-- `git push`
-- `git switch` / `git checkout`
-- `git merge`
-- `git cherry-pick`
-- `git rebase`
-
 # Полезные ресурсы
 
 :::::: columns
@@ -320,6 +305,91 @@ subtitle: Инструментарий Современного Программ
 
 \centering
 ![](images/git/progit2.png){width=65%}
+
+::::
+::::::
+
+# Работа с ветками
+
+## \centering Pro Git Глава 3. Git Branching
+
+```{=latex}
+\vspace{1em}
+\centering
+\qrcode[height=3cm]{https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell}
+\vspace{1em}
+```
+<https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell>
+
+# Команды Git
+
+- `git init` / `git clone`
+- `git status`
+- `git log`
+- `git add`
+- `git restore`
+- `git commit`
+- `git push`
+- `git switch` / `git checkout`
+- `git merge`
+- `git cherry-pick`
+- `git rebase --interactive`
+- `git remote ...`
+
+# Git config
+
+\small
+
+- `~/.gitconfig`
+  ```gitconfig
+  [user]
+	  email = <email>
+	  name = <first-name> <last-name>
+  [diff]
+	  tool = vimdiff
+  [merge]
+	  conflictstyle = zdiff3
+	  tool = vimdiff
+  [mergetool]
+	  keepBackup = false
+  [alias]
+	  st = status
+	  graph = log --graph --oneline --decorate --all
+	  ...
+  ```
+- `git config set --global <option> <value>`
+
+# Git visualization
+
+`\lstset{style=default,basicstyle={\ttfamily\color{CtpPeach}}}`{=latex}
+
+:::::: columns
+:::: {.column width=53%}
+
+## TUI
+
+- `git log --graph --oneline --decorate`
+- `vimdiff`
+- [lazygit](https://github.com/jesseduffield/lazygit)
+
+## GUI
+
+- `gitk` + `git gui`
+- [Sublime Merge](https://www.sublimemerge.com)
+- [GitKraken](https://www.gitkraken.com/git-client)
+
+::::
+:::: {.column width=47%}
+
+## \centering Git clients
+
+```{=latex}
+\vspace{1em}
+\centering
+\qrcode[height=3cm]{https://git-scm.com/downloads/guis}
+\vspace{1em}
+```
+<https://git-scm.com/downloads/guis>
 
 ::::
 ::::::
