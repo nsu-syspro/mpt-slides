@@ -359,7 +359,7 @@ subtitle: Инструментарий Современного Программ
   ```
 - `git config set --global <option> <value>`
 
-# Git visualization
+# Git tools
 
 `\lstset{style=default,basicstyle={\ttfamily\color{CtpPeach}}}`{=latex}
 
@@ -370,6 +370,7 @@ subtitle: Инструментарий Современного Программ
 
 - `git log --graph --oneline --decorate`
 - `vimdiff`
+- [delta](https://dandavison.github.io/delta/introduction.html)
 - [lazygit](https://github.com/jesseduffield/lazygit)
 
 ## GUI
