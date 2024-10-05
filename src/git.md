@@ -173,7 +173,7 @@ subtitle: Инструментарий Современного Программ
 - `\uncover<4->{{\color{CtpTeal} Коммит}`{=latex}: конкретный снимок, указывающий на соответствующий root tree
   и на предыдущий коммит в истории`}`{=latex}
 - `\uncover<5->{{\color{CtpTeal} Ветка}`{=latex}: указатель на конкретный коммит`}`{=latex}
-- `\uncover<5->{{\color{CtpTeal} HEAD}`{=latex}: указатель на *текущий* коммит`}`{=latex}
+- `\uncover<6->{{\color{CtpTeal} HEAD}`{=latex}: указатель на *текущий* коммит`}`{=latex}
 
 ::::
 \hfill
