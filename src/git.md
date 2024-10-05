@@ -79,17 +79,17 @@ subtitle: Инструментарий Современного Программ
   };
   \uncover<4->{
   \graph [use existing nodes] {
-      A -> B -> C
+      A <- B <- C
   };
   }
   \uncover<5->{
   \graph [use existing nodes] {
-      A -> D -> E
+      A <- D <- E
   };
   }
   \uncover<6->{
   \graph [use existing nodes] {
-      {E, C} -> M
+      {E, C} <- M
   };
   }
 
