@@ -7,15 +7,13 @@
 - [Основы работы с текстом](publish/text.pdf?raw=true)
 - [Создание скриптов](publish/bash.pdf?raw=true)
 - [Системы контроля версий](publish/git.pdf?raw=true)
+- [Автоматизация сборки программного обеспечения](publish/automation.pdf?raw=true)
 - Локализация и интернационализация программного обеспечения
 - Языки разметки
-- Автоматизация сборки программного обеспечения
 
 <!-- TODO
-- [Системы контроля версий](publish/git.pdf?raw=true)
 - [Локализация и интернационализация программного обеспечения](publish/encoding.pdf?raw=true)
 - [Языки разметки](publish/markup.pdf?raw=true)
-- [Автоматизация сборки программного обеспечения](publish/automation.pdf?raw=true)
 -->
 
 ## Building
