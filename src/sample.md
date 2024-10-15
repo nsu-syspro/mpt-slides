@@ -16,6 +16,7 @@ institute: University
 - `\uncover<3->{`{=latex} For images it is better to use vector graphics, e.g. in `.svg` which is automatically converted into `.pdf` via `Makefile` magic `}`{=latex}
 - `\uncover<4->{`{=latex} You can also use `.png` or `.jpg` but they usually look worse than `.svg`/`.pdf` `}`{=latex}
 - `\uncover<5->{`{=latex} Or you can dive deep into Ti*k*Z `}`{=latex}
+- `\uncover<6->{`{=latex} Links can also be embeded as QR codes into presentation with `\LaTeX }`{=latex}
 
 ::::
 \vline
@@ -23,7 +24,7 @@ institute: University
 ::::
 :::: {.column width=48%}
 
-## Second column
+## \centering Second column (centered)
 
 ```{=latex}
 \only<1-2>{
@@ -69,6 +70,20 @@ institute: University
 \end{tikzpicture}
 }
 ```
+
+```{=latex}
+\only<6>{
+\vspace{1em}
+\centering
+\qrcode[height=3cm]{https://texample.net/tikz/examples/}
+\vspace{1em}
+```
+<https://texample.net/tikz/examples/>
+
+```{=latex}
+}
+```
+
 
 ::::
 :::
