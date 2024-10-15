@@ -3,17 +3,30 @@
 %% Fix for "Missing number, treated as zero spaces"
 %% when using consecutive spaces
 \newsavebox\grayarrow
-\sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{red}\hookrightarrow\space}}}
+\sbox\grayarrow{\raisebox{0ex}[0ex][0ex]{\ensuremath{\textcolor{CtpOverlay1}\hookrightarrow\space}}}
 
-\lstset{language=scala,
-    basicstyle=\ttfamily,breaklines=false,
-    captionpos=b,
-    numberstyle=\tiny\color{gray},
-    numbersep=5pt,
-    escapeinside={\$\$},columns=flexible,
-    postbreak=\usebox\grayarrow,
-    showstringspaces=false,
-    texcl=true,
+\lstset{
+    % Note: \small\color{CtpText} in basicstyle interferes with style in inlined text
+    basicstyle   = {\ttfamily},
+    stringstyle  = {\color{CtpGreen}},
+    commentstyle = {\color{CtpOverlay1}},
+    keywordstyle = {\color{CtpMauve}},
+    keywordstyle = [2]{\color{CtpBlue}},
+    keywordstyle = [3]{\color{CtpYellow}},
+    keywordstyle = [4]{\color{CtpLavender}},
+    keywordstyle = [5]{\color{CtpPeach}},
+    keywordstyle = [6]{\color{CtpTeal}},
+    captionpos   = b,
+    breaklines   = false,
+    numberstyle  = \tiny\color{CtpOverlay1},
+    numbersep    = 5pt,
+    escapeinside = {\$\$},
+    columns      = flexible,
+    emph         = [7]{local},
+    emphstyle    = [7]{},
+    postbreak    = \usebox\grayarrow,
+    showstringspaces = false,
+    texcl        = true,
 }
 
 %%%%%%%
@@ -37,6 +50,8 @@
 
 \makeatother
 %%%%%%%
+
+\usepackage{mdframed}
 
 %% Set numbered footnotes in minipages
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}
@@ -83,9 +98,9 @@
 \setbeamerfont{page number in head/foot}{size=\footnotesize}
 \setbeamercolor{page number in head/foot}{fg=main}
 
-\colorlet{main}{black}
-\colorlet{maininverted}{white}
-\definecolor{bginverted}{RGB}{98,98,98}
+\setbeamercolor{normal text}{fg=main}
+\setbeamercolor{item}{fg=main}
+\setbeamercolor{background canvas}{bg=bgmain}
 
 \setbeamercolor*{palette primary}{fg=maininverted,bg=bginverted}
 
