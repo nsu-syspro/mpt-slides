@@ -26,9 +26,3 @@ which can then be committed to the repo:
 ```
 make publish
 ```
-
-## Variations
-
-More specialized use cases can be found as separate branches:
-
-- Support for cyrillic characters: [lang/cyrillic](https://github.com/liontiger23/presentation-template/tree/lang/cyrillic)
