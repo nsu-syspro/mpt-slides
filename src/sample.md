@@ -1,7 +1,7 @@
 ---
 title: Presentation template
 author: Ivan Trepakov
-company: My company
+institute: University
 ---
 
 # Sample slide
