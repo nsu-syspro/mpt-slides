@@ -61,25 +61,41 @@ def fact(n):
 ```{=latex}
 \only<3-4>{
 \centering
+\Begin{minipage}[c][.35\textheight][c]{.6\textwidth}
+\Begin{mdframed}[backgroundcolor=maininverted,linecolor=maininverted]
 ```
+![](images/sample/Markdown-mark.pdf)
+
+<!-- Without minipage could be simply this:
 ![](images/sample/Markdown-mark.pdf){ width=60% }
+-->
 ```{=latex}
+\End{mdframed}
+\End{minipage}
 }
 ```
 
 ```{=latex}
 \only<4>{
 \centering
+\Begin{minipage}[c][.35\textheight][c]{.6\textwidth}
+\Begin{mdframed}[backgroundcolor=maininverted,linecolor=maininverted]
 ```
+![](images/sample/Markdown-mark.svg.png)
+
+<!-- Without minipage could be simply this:
 ![](images/sample/Markdown-mark.svg.png){ width=60% }
+-->
 ```{=latex}
+\End{mdframed}
+\End{minipage}
 }
 ```
 
 ```{=latex}
 \only<5>{
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[every node/.style={text=black}]
   \begin{scope}[blend group = soft light]
     \fill[red!30!white]   ( 90:1.2) circle (2);
     \fill[green!30!white] (210:1.2) circle (2);
