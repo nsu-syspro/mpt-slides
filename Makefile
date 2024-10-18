@@ -38,10 +38,10 @@ SVG_PDF_ROOT = $(SVG_ROOT:.svg=.pdf)
 SVG_PDF_TARGET = $(SVG_TARGET:.svg=.pdf)
 SVG_PDF = $(SVG_PDF_ROOT) $(SVG_PDF_TARGET)
 
-DOT_ROOT = $(wildcard $(IMAGES_DIR)/*.dot)
-DOT_TARGET = $(foreach NAME,$(PDF_NAMES),$(wildcard $(IMAGES_DIR)/$(NAME)/*.dot))
-DOT_PDF_ROOT = $(DOT_ROOT:.dot=.pdf)
-DOT_PDF_TARGET = $(DOT_TARGET:.dot=.pdf)
+DOT_ROOT = $(wildcard $(IMAGES_DIR)/*.gv)
+DOT_TARGET = $(foreach NAME,$(PDF_NAMES),$(wildcard $(IMAGES_DIR)/$(NAME)/*.gv))
+DOT_PDF_ROOT = $(DOT_ROOT:.gv=.pdf)
+DOT_PDF_TARGET = $(DOT_TARGET:.gv=.pdf)
 DOT_PDF = $(DOT_PDF_ROOT) $(DOT_PDF_TARGET)
 
 ############################
@@ -90,7 +90,7 @@ $(SVG_PDF): %.pdf: %.svg
 	SELF_CALL=no inkscape -D $< -o $@
 
 
-$(DOT_PDF): %.pdf: %.dot
+$(DOT_PDF): %.pdf: %.gv
 	dot -Tpdf $< -o $@
 
 ############################
