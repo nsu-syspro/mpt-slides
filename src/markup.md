@@ -117,7 +117,7 @@ Markdown, \LaTeX, HTML
 ::::
 :::
 
-# \LaTeX
+# LaTeX
 
 # Визуализация
 
