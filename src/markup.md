@@ -119,6 +119,131 @@ Markdown, \LaTeX, HTML
 
 # \LaTeX
 
+# Визуализация
+
+## Графы и диаграмы
+
+- [Graphviz](https://graphviz.org/)
+- [Gnuplot](http://www.gnuplot.info)
+- [Mermaid](https://mermaid.js.org)
+- [Matplotlib](https://matplotlib.org)
+- [TikZ](https://texample.net//tikz/examples/)
+
+# Graphviz
+
+::: columns
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.7\linewidth}
+```
+
+```{=latex}
+\lstset{style=default,basicstyle={\small\ttfamily}}
+```
+
+::::: block
+
+## \centering Пример
+
+```{.dot style=dot}
+digraph G {
+  A -> {B, C} -> D
+}
+```
+
+```{.bash columns=fixed}
+$ dot -Tsvg example.gv \
+      -o example.svg
+```
+
+:::::
+
+::::: block
+
+## \centering Полезные ресурсы
+
+- [Graphviz Documentation](https://graphviz.org/documentation/)
+- [Graphviz Gallery](https://graphviz.org/gallery/)
+- [Online-редактор](https://dreampuf.github.io/GraphvizOnline/)
+
+:::::
+
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.8\linewidth}
+\begin{mdframed}[backgroundcolor=maininverted,linecolor=maininverted]
+```
+![](images/markup/graphviz-example.pdf)
+```{=latex}
+\end{mdframed}
+\end{minipage}
+```
+
+::::
+:::
+
+# Gnuplot
+
+::: columns
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.7\linewidth}
+```
+
+```{=latex}
+\lstset{style=default,basicstyle={\small\ttfamily}}
+```
+
+::::: block
+
+## \centering Пример
+
+```{.bash columns=fixed}
+$ gnuplot -p -e \
+    "plot [-5:5] sin(x), cos(x)"
+```
+
+:::::
+
+::::: block
+
+## \centering Полезные ресурсы
+
+- [Подробный туториал](https://ctcms-uq.github.io/data_tutorials/gnuplot.html)
+- [Галерея примеров](https://gnuplot.sourceforge.net/demo/)
+
+:::::
+
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{\linewidth}
+```
+![](images/markup/gnuplot-example.pdf)
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::
+
 # {.plain}
 
 \centering
