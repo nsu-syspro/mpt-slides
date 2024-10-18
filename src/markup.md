@@ -212,13 +212,23 @@ no integer solutions:
 
 # Визуализация
 
-## Графы и диаграмы
+::: columns
+:::: {.column width=30%}
+::::
+:::: {.column width=40%}
+
+## \centering Графы и диаграмы
 
 - [Graphviz](https://graphviz.org/)
 - [Gnuplot](http://www.gnuplot.info)
 - [Mermaid](https://mermaid.js.org)
 - [Matplotlib](https://matplotlib.org)
 - [Ti*k*Z](https://texample.net/tikz/examples/)
+
+::::
+:::: {.column width=30%}
+::::
+:::
 
 # Graphviz
 
