@@ -119,6 +119,97 @@ Markdown, \LaTeX, HTML
 
 # LaTeX
 
+::: columns
+:::: {.column width=45%}
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.7\linewidth}
+```
+
+::::: block
+
+## \centering Пример
+
+```{=latex}
+\lstset{style=latex,basicstyle={\scriptsize\ttfamily}}
+```
+
+```
+\documentclass[12pt]{article}
+\begin{document}
+
+The well known Pythagorean theorem
+$x^2 + y^2 = z^2$ was proved
+to be invalid for other exponents.
+Meaning the next equation has
+no integer solutions:
+
+\[ x^n + y^n = z^n \]
+
+\end{document}
+```
+
+:::::
+
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: {.column width=55%}
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{\linewidth}
+```
+![](images/markup/latex-example.png)
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::
+
+# LaTeX
+
+::: columns
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.7\linewidth}
+```
+
+::::: block
+
+## \centering Полезные ресурсы
+
+- [Overleaf](https://www.overleaf.com/)
+- [Узнать \LaTeX\ за 30 минут](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
+- [Русский шаблон](https://ru.overleaf.com/latex/templates/1-dot-1-basic-russian-template/zzwxxzmwsnsg)
+
+:::::
+
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.8\linewidth}
+```
+![](images/markup/LaTeX_logo.pdf)
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::
+
 # Визуализация
 
 ## Графы и диаграмы
@@ -127,7 +218,7 @@ Markdown, \LaTeX, HTML
 - [Gnuplot](http://www.gnuplot.info)
 - [Mermaid](https://mermaid.js.org)
 - [Matplotlib](https://matplotlib.org)
-- [TikZ](https://texample.net//tikz/examples/)
+- [Ti*k*Z](https://texample.net/tikz/examples/)
 
 # Graphviz
 
