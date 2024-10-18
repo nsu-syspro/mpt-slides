@@ -21,9 +21,9 @@ jobs:
         pdflatex --version
         bibtex --version
 
-    - name: Install Inkscape
+    - name: Install Inkscape and Graphviz
       run: |
-        sudo apt-get install inkscape
+        sudo apt-get install inkscape graphviz
 
     - name: Make pdf
       run: make publish
