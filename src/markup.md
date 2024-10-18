@@ -221,6 +221,7 @@ $ gnuplot -p -e \
 ## \centering Полезные ресурсы
 
 - [Подробный туториал](https://ctcms-uq.github.io/data_tutorials/gnuplot.html)
+- [Gnuplot FAQ](http://www.gnuplot.info/faq/index.html)
 - [Галерея примеров](https://gnuplot.sourceforge.net/demo/)
 
 :::::
