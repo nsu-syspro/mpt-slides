@@ -55,13 +55,16 @@ Markdown, \LaTeX, HTML
 - [Markdown playground](https://spec.commonmark.org/dingus/)
 - [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [Pandoc User's Guide](https://pandoc.org/MANUAL.html)
+- [Presentation template](https://github.com/liontiger23/presentation-template)
 
+::::
+:::: {.column width=5%}
 ::::
 :::: {.column width=40%}
 
 \centering
 ```{=latex}
-\begin{minipage}[c][.35\textheight][c]{.6\textwidth}
+\begin{minipage}[c][.35\textheight][c]{.7\textwidth}
 \begin{mdframed}[backgroundcolor=maininverted,linecolor=maininverted]
 ```
 ![](images/markup/Markdown-mark.pdf)
@@ -71,7 +74,7 @@ Markdown, \LaTeX, HTML
 ```
 
 ::::
-:::: {.column width=10%}
+:::: {.column width=5%}
 ::::
 :::
 
@@ -187,7 +190,9 @@ no integer solutions:
 
 - [Overleaf](https://www.overleaf.com/)
 - [Узнать \LaTeX\ за 30 минут](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
-- [Русский шаблон](https://ru.overleaf.com/latex/templates/1-dot-1-basic-russian-template/zzwxxzmwsnsg)
+- [Russian template](https://ru.overleaf.com/latex/templates/1-dot-1-basic-russian-template/zzwxxzmwsnsg)
+- [Beamer](https://www.overleaf.com/learn/latex/Beamer)
+- [Ti*k*Z](https://www.overleaf.com/learn/latex/TikZ_package)
 
 :::::
 
