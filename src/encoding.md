@@ -162,6 +162,8 @@ f0:
 ::: columns
 :::: {.column width=30%}
 
+:::::: block
+
 ## \centering оПХБЕР ЛХП!
 
 . . .
@@ -173,9 +175,9 @@ f0:
 ```
 
 ```{columns=fixed}
-$ iconv -f koi8-r \
-    <(iconv -t cp1251 \
-      <(echo "<*оПХБЕР ЛХП*>!"))
+$ echo "<*оПХБЕР ЛХП*>!" \
+   | iconv -t cp1251 \
+   | iconv -f koi8-r
 <*Ноуаеп куо!*>
 ```
 
@@ -185,11 +187,31 @@ $ iconv -f koi8-r \
 ```
 
 ```{columns=fixed}
-$ iconv -f cp1251 \
-    <(iconv -t koi8-r \
-      <(echo "<*оПХБЕР ЛХП*>!"))
+$ echo "<*оПХБЕР ЛХП*>!" \
+   | iconv -t koi8-r \
+   | iconv -f cp1251
 <*Привет мир!*>
 ```
+
+```{=latex}
+\end{uncoverenv}
+```
+
+::::::
+
+```{=latex}
+\begin{uncoverenv}<+(1)->
+```
+
+:::::: block
+
+## Инструменты
+
+- [iconv](https://linux.die.net/man/1/iconv)
+- [enca](https://linux.die.net/man/1/enca)
+- [uchardet](https://www.freedesktop.org/wiki/Software/uchardet/)
+
+::::::
 
 ```{=latex}
 \end{uncoverenv}
