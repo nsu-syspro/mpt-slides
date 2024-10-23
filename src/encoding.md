@@ -13,7 +13,7 @@ subtitle: Инструментарий Современного Программ
 \footnotesize
 ```
 
-```{columns=fixed}
+```{columns=fixed morekeywords=ascii}
 $ ascii -d
     0 NUL    16 DLE    32      48 0    64 @    80 P    96 `   112 p
     1 SOH    17 DC1    33 !    49 1    65 A    81 Q    97 a   113 q
@@ -61,7 +61,7 @@ $ ascii -d
 ::::
 :::: {.column width=21%}
 
-## \centering ASCII
+## \centering \textcolor{CtpBlue}{ASCII}
 
 ```{columns=fixed}
 
@@ -99,7 +99,7 @@ f0:
 ::::
 :::: {.column width=23%}
 
-## \centering CP866
+## \centering \textcolor{CtpBlue}{CP866}
 
 ```{columns=fixed}
 <*АБВГДЕЖЗИЙКЛМНОП*>
@@ -112,14 +112,14 @@ f0:
 <*ЁёЄєЇїЎў°∙·√№¤■ *>
 ```
 
-> MS-DOS
+> \textcolor{CtpOverlay1}{MS-DOS}
 
 . . .
 
 ::::
 :::: {.column width=23%}
 
-## \centering KOI8-R
+## \centering\textcolor{CtpBlue}{KOI8-R}
 
 ```{columns=fixed}
 <*─│┌┐└┘├┤┬┴┼▀▄█▌▐*>
@@ -132,14 +132,14 @@ f0:
 <*ПЯРСТУЖВЬЫЗШЭЩЧЪ*>
 ```
 
-> Unix
+> \textcolor{CtpOverlay1}{Unix}
 
 . . .
 
 ::::
 :::: {.column width=23%}
 
-## \centering CP1251
+## \centering \textcolor{CtpBlue}{CP1251}
 
 ```{columns=fixed}
 <*ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏ*>
@@ -152,7 +152,7 @@ f0:
 <*рстуфхцчшщъыьэюя*>
 ```
 
-> Windows
+> \textcolor{CtpOverlay1}{Windows}
 
 ::::
 :::
@@ -176,8 +176,8 @@ f0:
 \begin{uncoverenv}<+(1)->
 ```
 
-```{columns=fixed}
-$ echo "<*оПХБЕР ЛХП*>!" \
+```{.bash columns=fixed morekeywords=iconv}
+$ echo "<*\textcolor{CtpGreen}{оПХБЕР ЛХП}*>!" \
    | iconv -t cp1251 \
    | iconv -f koi8-r
 <*Ноуаеп куо!*>
@@ -188,8 +188,8 @@ $ echo "<*оПХБЕР ЛХП*>!" \
 \begin{uncoverenv}<+(1)->
 ```
 
-```{columns=fixed}
-$ echo "<*оПХБЕР ЛХП*>!" \
+```{.bash columns=fixed morekeywords=iconv}
+$ echo "<*\textcolor{CtpGreen}{оПХБЕР ЛХП}*>!" \
    | iconv -t koi8-r \
    | iconv -f cp1251
 <*Привет мир!*>
@@ -227,6 +227,53 @@ $ echo "<*оПХБЕР ЛХП*>!" \
 \centering
 
 [![](images/encoding/codepages.png)](https://habr.com/ru/articles/147843/)
+
+::::
+:::
+
+# Unicode
+
+::: columns
+:::: {.column width=65%}
+
+## Unicode Standard
+
+- Универсальное кодирование символов
+- Количество различных кодов 1 114 112
+- [Unicode 16.0](https://www.unicode.org/versions/Unicode16.0.0/core-spec/) (2024 год)
+  использует лишь 154 998
+
+## Цели
+
+- `\textcolor{CtpBlue}{`{=latex} Универсальность `}`{=latex}
+  Содержит все возможные символы современных и древних языков,
+  технических текстов, диакритику и emoji
+  \vspace{0.5em}
+
+- `\textcolor{CtpBlue}{`{=latex} Эффективность `}`{=latex}
+  *Plain text* кодирование в одном из трех стандартных форматов:
+  `\textcolor{CtpYellow}{`{=latex}UTF-32`}`{=latex},
+  `\textcolor{CtpYellow}{`{=latex}UTF-16`}`{=latex},
+  `\textcolor{CtpYellow}{`{=latex}UTF-8`}`{=latex}
+  \vspace{0.5em}
+
+- `\textcolor{CtpBlue}{`{=latex} Однозначность `}`{=latex}
+  Каждый код *однозначно* соответствует единственному символу
+
+::::
+:::: {.column width=35%}
+
+##
+
+```{=latex}
+\centering
+\begin{minipage}[c][.7\textheight][c]{.7\linewidth}
+\centering
+```
+![](images/encoding/Unicode_logo.pdf)
+```{=latex}
+\end{minipage}
+```
 
 ::::
 :::
