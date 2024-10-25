@@ -712,6 +712,92 @@ U+1F467	^5	 GIRL
 ::::
 :::
 
+# Локали
+
+. . .
+
+::: columns
+:::: {.column width=45%}
+
+## \centering Переменные окружения
+
+`\lstset{style=default,basicstyle={\ttfamily\color{CtpBlue}}}`{=latex}
+
+- `LANG` Локаль по умолчанию
+- `LC_COLLATE` Поиск и сравнение строк
+- `LC_CTYPE` Диапазоны символов (алфавит, числа, верхний/нижний регистры)
+- `LC_TIME` Формат даты и времени
+- `LC_NUMERIC` Формат чисел
+- `LC_MESSAGES` Язык сообщений системы и утилит
+- `LC_ADDRESS` Формат адреса и локации
+- \dots
+- `LC_ALL` Переопределяет все вышеперечисленные переменные
+
+. . .
+
+::::
+:::: {.column width=55%}
+
+## \centering Unix locale
+
+`\lstset{style=default,basicstyle={\ttfamily\color{CtpLavender}}}`{=latex}
+
+> `language[_territory][.codeset][@modifier]`
+
+`\lstset{style=default,basicstyle={\ttfamily\color{CtpBlue}}}`{=latex}
+
+- `en_US` --- американский английский
+- `ru_RU.UTF-8` --- русский (Россия)
+- `fr_CA.ISO8859-1` --- канадский французский
+- \dots
+
+::::
+:::
+
+# Примеры
+
+. . .
+
+::: columns
+:::: {.column width=50%}
+
+```{.bash columns=fixed}
+$ export LANG=ru_RU.UTF-8
+$ echo "windows" | \
+  awk '{print toupper($0)}'
+WINDOWS
+$ export LANG=tr_TR.UTF-8
+$ echo "windows" | \
+  awk '{print toupper($0)}'
+W<*İ*>NDOWS
+```
+
+. . .
+
+::::
+:::: {.column width=50%}
+
+```{.bash columns=fixed morekeywords=date,locale,grep}
+$ locale
+LANG="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC="ru_RU.UTF-8"
+LC_TIME="ru_RU.UTF-8"
+...
+LC_ALL=
+$ locale -k LC_TIME | grep 'd_t_fmt'
+d_t_fmt="%a %d %b %Y %T"
+$ date
+<*Сб*> 26 <*окт*> 2024 00:02:42 +07
+$ LC_TIME=en_US date
+Sat Oct 26 12:02:42 AM +07 2024
+$ LC_ALL=C date
+Sat Oct 26 00:02:42 +07 2024
+```
+
+::::
+:::
+
 # {.plain}
 
 \centering
