@@ -87,6 +87,11 @@
 %% Set numbered footnotes in minipages
 \renewcommand{\thempfootnote}{\arabic{mpfootnote}}
 
+%% Support for emoji
+\usepackage{emoji}
+\setemojifont{Noto Color Emoji}[Renderer=Harfbuzz]
+%\setemojifont{Noto Color Emoji}[RawFeature={mode=harf}]
+
 %% Support for QR codes
 \usepackage[nolinks]{qrcode}
 

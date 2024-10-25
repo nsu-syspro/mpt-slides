@@ -278,6 +278,240 @@ $ echo "<*\textcolor{CtpGreen}{оПХБЕР ЛХП}*>!" \
 ::::
 :::
 
+# Unicode {.fragile .t}
+
+::: columns
+:::: {.column width=50%}
+
+## \centering Code points
+
+- Кодируют "абстрактные символы"
+- Целые числа от 0 до 10FFFF\textsubscript{16}
+- Стандартно записываются в hex с префиксом U+
+- Имеют уникальные имена
+
+. . .
+
+## \centering Инструменты
+
+```{=latex}
+\lstset{style=default,basicstyle={\color{CtpPeach}\ttfamily}}
+```
+- `uniname` (часть пакета [uniutils](https://billposer.org/Software/unidesc.html))
+- Модуль [unicodedata](https://docs.python.org/3/library/unicodedata.html) в Python
+
+  \scriptsize
+  ```{.python style=default columns=fixed}
+  import sys, unicodedata as U
+
+  for i, c in enumerate(sys.stdin.read()):
+      s = '<*\textcolor{CtpGreen}{◌}*>' if U.category(c)[0] == 'M' else ''
+      print('U+{0:04X}\t{1}{2}\t{3}'
+            .format(ord(c), s, c, U.name(c)))
+  ```
+
+. . .
+
+::::
+:::: {.column width=50%}
+
+```{=latex}
+\lstset{
+  style=default,
+  basicstyle={\small\ttfamily},
+  literate=
+    {^1}{{\emoji{earth-americas}}}1
+    {^2}{{◌̆}}1
+    {^3}{{\emoji{man}}}1
+    {^4}{{\emoji{woman}}}1
+    {^5}{{\emoji{girl}}}1
+}
+```
+
+```{=latex}
+\begin{onlyenv}<+-+(2)>
+```
+
+:::::: block
+
+## \centering Hello \emoji{earth-americas}!
+
+```{=latex}
+\begin{uncoverenv}<+(1)>
+```
+
+```{.bash columns=fixed morekeywords=uniname}
+$ printf 'Hello \U1F30E!' | uniname
+```
+\vspace{-1em}
+
+```{=latex}
+\end{uncoverenv}
+```
+
+```{=latex}
+\begin{uncoverenv}<+(-1)-+>
+```
+
+```{columns=fixed}
+U+0048	H	LATIN CAPITAL LETTER H
+U+0065	e	LATIN SMALL LETTER E
+U+006C	l	LATIN SMALL LETTER L
+U+006C	l	LATIN SMALL LETTER L
+U+006F	o	LATIN SMALL LETTER O
+U+0020	 	SPACE
+U+1F30E	^1	 EARTH GLOBE AMERICAS
+U+0021	!	EXCLAMATION MARK
+```
+
+```{=latex}
+\end{uncoverenv}
+```
+
+::::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<+-+(2)>
+```
+
+:::::: block
+
+## \centering Привет \emoji{earth-americas}!
+
+```{=latex}
+\begin{uncoverenv}<+(1)>
+```
+
+```{.bash columns=fixed morekeywords=uniname}
+$ printf '<*\textcolor{CtpGreen}{Привет}*> \U1F30E!' | uniname
+```
+\vspace{-1em}
+
+```{=latex}
+\end{uncoverenv}
+```
+
+```{=latex}
+\begin{uncoverenv}<+(-1)-+>
+```
+
+```{columns=fixed}
+U+041F	<*П*>	CYRILLIC CAPITAL LETTER PE
+U+0440	<*р*>	CYRILLIC SMALL LETTER ER
+U+0438	<*и*>	CYRILLIC SMALL LETTER I
+U+0432	<*в*>	CYRILLIC SMALL LETTER VE
+U+0435	<*е*>	CYRILLIC SMALL LETTER IE
+U+0442	<*т*>	CYRILLIC SMALL LETTER TE
+U+0020	 	SPACE
+U+1F30E	^1	 EARTH GLOBE AMERICAS
+U+0021	!	EXCLAMATION MARK
+```
+
+```{=latex}
+\end{uncoverenv}
+```
+
+::::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<+-+(2)>
+```
+
+:::::: block
+
+## \centering Йо-йо
+
+```{=latex}
+\begin{uncoverenv}<+(1)>
+```
+
+```{.bash columns=fixed morekeywords=uniname}
+$ printf '<*\textcolor{CtpGreen}{Йо-и}*>\u0306<*\textcolor{CtpGreen}{о}*>' | uniname
+```
+\vspace{-1em}
+
+```{=latex}
+\end{uncoverenv}
+```
+
+```{=latex}
+\begin{uncoverenv}<+(-1)-+>
+```
+
+```{columns=fixed}
+U+0439	<*Й*>	CYRILLIC CAPITAL LETTER SHORT I
+U+043E	<*о*>	CYRILLIC SMALL LETTER O
+U+002D	-	HYPHEN-MINUS
+U+0438	<*и*>	CYRILLIC SMALL LETTER I
+U+0306	^2	 COMBINING BREVE
+U+043E	<*о*>	CYRILLIC SMALL LETTER O
+```
+
+```{=latex}
+\end{uncoverenv}
+```
+
+::::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<+-+(2)>
+```
+
+:::::: block
+
+## \centering \emoji{family-man-woman-girl}
+
+```{=latex}
+\begin{uncoverenv}<+(1)>
+```
+
+```{.bash columns=fixed morekeywords=uniname}
+$ printf '\U1F468\u200D\U1F469\u200D\U1F467' \
+  | uniname
+```
+\vspace{-1em}
+
+```{=latex}
+\end{uncoverenv}
+```
+
+```{=latex}
+\begin{uncoverenv}<+(-1)-+>
+```
+
+```{columns=fixed}
+U+1F468	^3	 MAN
+U+200D		ZERO WIDTH JOINER
+U+1F469	^4	 WOMAN
+U+200D		ZERO WIDTH JOINER
+U+1F467	^5	 GIRL
+```
+
+```{=latex}
+\end{uncoverenv}
+```
+
+::::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+::::
+:::
+
 # {.plain}
 
 \centering
