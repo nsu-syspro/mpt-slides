@@ -512,6 +512,206 @@ U+1F467	^5	 GIRL
 ::::
 :::
 
+# Unicode
+
+::: columns
+:::: {.column width=50%}
+
+```{=latex}
+\begin{onlyenv}<1-8>
+```
+
+:::::: block
+
+## \centering Ключевые моменты
+
+. . .
+
+- `\uncover<2-8>{`{=latex}Текст разбивается на символы `}`{=latex}
+  - `\uncover<3-8>{\textcolor{CtpRed}{`{=latex}Символы $\ne$ глифы `}}`{=latex}
+- `\uncover<4-8>{`{=latex}Символы кодируются последовательностью code point'ов `}`{=latex}
+  - `\uncover<4-8>{\textcolor{CtpBlue}{`{=latex}Code point `}`{=latex}
+    целое число от 0 до 10FFFF\textsubscript{16}
+    соответствующее некоторому *абстрактному символу*
+    `}`{=latex}
+- `\uncover<5-8>{`{=latex}Символы могут комбинироваться `}`{=latex}
+- `\uncover<7-8>{`{=latex}Правила поиска, сортировки, эквивалентности и других процессов
+  описаны в стандарте`}`{=latex}
+- `\uncover<8>{`{=latex}Три стандартных формата кодирования code point'ов:
+  `\textcolor{CtpYellow}{`{=latex}UTF-32`}`{=latex},
+  `\textcolor{CtpYellow}{`{=latex}UTF-16`}`{=latex},
+  `\textcolor{CtpYellow}{`{=latex}UTF-8`}`{=latex}
+  `}`{=latex}
+  - `\uncover<8>{\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex}
+    Минимальная единица кодирования в формате
+    `}`{=latex}
+
+::::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<9->
+```
+
+:::::: block
+
+## \centering UTF-32
+
+> `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex} 32-битное значение
+
+::::::
+
+```{=latex}
+\begin{uncoverenv}<10->
+```
+
+:::::: block
+
+## \centering UTF-16
+
+> `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex} 16-битное значение
+
+```{=latex}
+\centering
+\begin{minipage}[c][.25\textheight][c]{\textwidth}
+\begin{mdframed}[backgroundcolor=white,linecolor=white]
+\centering
+```
+![](images/encoding/UTF-16-Table.png)
+```{=latex}
+\end{mdframed}
+\end{minipage}
+\vspace{-2em}
+```
+
+
+::::::
+
+
+```{=latex}
+\end{uncoverenv}
+```
+
+```{=latex}
+\begin{uncoverenv}<11->
+```
+
+:::::: block
+
+## \centering UTF-8
+
+> `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex} 8-битное значение
+
+```{=latex}
+\centering
+\begin{minipage}[c][.3\textheight][c]{\textwidth}
+\begin{mdframed}[backgroundcolor=white,linecolor=white]
+\centering
+```
+![](images/encoding/UTF-8-Table.png)
+```{=latex}
+\end{mdframed}
+\end{minipage}
+```
+
+::::::
+
+
+```{=latex}
+\end{uncoverenv}
+```
+
+
+```{=latex}
+\end{onlyenv}
+```
+
+::::
+:::: {.column width=50%}
+
+```{=latex}
+\centering
+\vspace{-1em}
+\begin{minipage}[c][\textheight][c]{\textwidth}
+\begin{mdframed}[backgroundcolor=white,linecolor=white]
+\centering
+```
+
+```{=latex}
+\begin{onlyenv}<2>
+```
+![](images/encoding/Unicode-TextSymbol.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<3>
+```
+![](images/encoding/Unicode-CharGlyph.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<4>
+```
+![](images/encoding/Unicode-CodePoints.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<5>
+```
+![](images/encoding/Unicode-MultipleCombiningCharacters.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<6>
+```
+![](images/encoding/Unicode-EnclosingSym.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<7>
+```
+![](images/encoding/Unicode-EquivalentSequences.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<8-11>
+```
+![](images/encoding/Unicode-EncodingForms.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<12->
+```
+![](images/encoding/Unicode-EncodingSchemes.pdf)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\end{mdframed}
+\end{minipage}
+```
+
+::::
+:::
+
 # {.plain}
 
 \centering
