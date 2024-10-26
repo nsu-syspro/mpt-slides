@@ -556,16 +556,50 @@ U+1F467	^5	 GIRL
 \begin{onlyenv}<9->
 ```
 
+```{=latex}
+\begin{onlyenv}<9>
+```
+
+:::::: block
+
+## \centering Unicode Transformation Format
+
+- `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex}
+  Минимальная единица кодирования в формате
+- `\textcolor{CtpBlue}{`{=latex}Scalar value `}`{=latex}
+  Кодируемое значение code point'а в диапазонах
+  U+0000..U+D7FF и U+E000..U+10FFFF
+- `\textcolor{CtpRed}{`{=latex}Символ $\ne$ code point $\ne$ scalar value $\ne$ code unit `}`{=latex}
+
+::::::
+
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<10>
+```
+
 :::::: block
 
 ## \centering UTF-32
 
 > `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex} 32-битное значение
 
+- Каждый скаляр кодируется одним 32-битным значением
+- `\textcolor{CtpGreen}{`{=latex} Кодировка фиксированной длины `}`{=latex}
+- `\textcolor{CtpRed}{`{=latex} Большой размер `}`{=latex}
+- Формат строк в Python 3
+
 ::::::
 
 ```{=latex}
-\begin{uncoverenv}<10->
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<11>
 ```
 
 :::::: block
@@ -574,29 +608,21 @@ U+1F467	^5	 GIRL
 
 > `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex} 16-битное значение
 
-```{=latex}
-\centering
-\begin{minipage}[c][.25\textheight][c]{\textwidth}
-\begin{mdframed}[backgroundcolor=white,linecolor=white]
-\centering
-```
-![](images/encoding/UTF-16-Table.png)
-```{=latex}
-\end{mdframed}
-\end{minipage}
-\vspace{-2em}
-```
-
+- U+0000..U+D7FF и U+E000..U+FFFF кодируются одним 16-битным значением
+- U+1000..U+10FFFF кодируются двумя 16-битными значениями в диапазоне U+D800..U+DFFF,
+  называемыми `\textcolor{CtpBlue}{`{=latex}суррогатными парами`}`{=latex}
+- `\textcolor{CtpGreen}{`{=latex} Символы большинства языков кодируются одним code unit'ом `}`{=latex}
+- `\textcolor{CtpRed}{`{=latex} Кодировка переменной длины `}`{=latex}
+- Формат строк в Python 2, Java и Windows API
 
 ::::::
 
-
 ```{=latex}
-\end{uncoverenv}
+\end{onlyenv}
 ```
 
 ```{=latex}
-\begin{uncoverenv}<11->
+\begin{onlyenv}<12>
 ```
 
 :::::: block
@@ -605,23 +631,36 @@ U+1F467	^5	 GIRL
 
 > `\textcolor{CtpBlue}{`{=latex}Code unit `}`{=latex} 8-битное значение
 
-```{=latex}
-\centering
-\begin{minipage}[c][.3\textheight][c]{\textwidth}
-\begin{mdframed}[backgroundcolor=white,linecolor=white]
-\centering
-```
-![](images/encoding/UTF-8-Table.png)
-```{=latex}
-\end{mdframed}
-\end{minipage}
-```
+- Расширение ASCII
+- По-байтовая кодировка
+- `\textcolor{CtpGreen}{`{=latex} Компактный размер `}`{=latex}
+- `\textcolor{CtpRed}{`{=latex} Кодировка переменной длины `}`{=latex}
+- Стандартный формат текста в Web (HTML, CSS, XML) и Unix системах
 
 ::::::
 
+```{=latex}
+\end{onlyenv}
+```
 
 ```{=latex}
-\end{uncoverenv}
+\begin{onlyenv}<13>
+```
+
+:::::: block
+
+## \centering Byte order
+
+- Многобайтовые кодировки требуют определения порядка байтов при записи code unit'а
+- *Big-endian* --- байты пишутся начиная с самого старшего
+- *Little-endian* --- байты пишутся начиная с самого младшего
+- `\textcolor{CtpBlue}{`{=latex}Byte order mark (BOM) `}`{=latex}
+  U+FEFF в соответствующем формате
+
+::::::
+
+```{=latex}
+\end{onlyenv}
 ```
 
 
@@ -689,15 +728,42 @@ U+1F467	^5	 GIRL
 ```
 
 ```{=latex}
-\begin{onlyenv}<8-11>
+\begin{onlyenv}<8-12>
 ```
 ![](images/encoding/Unicode-EncodingForms.pdf)
+
+```{=latex}
+\centering
+\begin{minipage}[c][.4\textheight][c]{\textwidth}
+\centering
+```
+
+```{=latex}
+\begin{onlyenv}<11>
+```
+![](images/encoding/UTF-16-Table-cropped.png)
 ```{=latex}
 \end{onlyenv}
 ```
 
 ```{=latex}
-\begin{onlyenv}<12->
+\begin{onlyenv}<12>
+```
+![](images/encoding/UTF-8-Table-cropped.png)
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\end{minipage}
+```
+
+```{=latex}
+\end{onlyenv}
+```
+
+```{=latex}
+\begin{onlyenv}<13->
 ```
 ![](images/encoding/Unicode-EncodingSchemes.pdf)
 ```{=latex}
