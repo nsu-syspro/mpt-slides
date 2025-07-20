@@ -5,11 +5,11 @@
 - [Введение](publish/intro.pdf?raw=true)
 - [Основы работы с Unix](publish/unix.pdf?raw=true)
 - [Основы работы с текстом](publish/text.pdf?raw=true)
+- [Локализация и интернационализация программного обеспечения](publish/encoding.pdf?raw=true)
 - [Создание скриптов](publish/bash.pdf?raw=true)
 - [Системы контроля версий](publish/git.pdf?raw=true)
 - [Автоматизация сборки программного обеспечения](publish/automation.pdf?raw=true)
 - [Языки разметки](publish/markup.pdf?raw=true)
-- [Локализация и интернационализация программного обеспечения](publish/encoding.pdf?raw=true)
 
 ## Building
 
