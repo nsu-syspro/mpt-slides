@@ -10,8 +10,9 @@ subtitle: Инструментарий Современного Программ
 - Universal: `make`, `ninja`, `bazel`
 - C/C++: `CMake`
 - Rust: `cargo`
-- Java: `gradle`, `maven`
+- Java: `maven`, `gradle`
 - Scala: `sbt`
+- Haskell: `cabal`, `stack`
 
 # Continuous Integration (CI)
 
