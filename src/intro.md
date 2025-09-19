@@ -134,10 +134,10 @@ RegEx {
 ```{=latex}
 \begin{minipage}[c][.8\textheight][c]{\linewidth}
 \centering
-\qrcode[height=4cm]{https://sys.pro/courses/mpt/}
+\qrcode[height=4cm]{https://nsu-syspro.github.io/courses/mpt/}
 \vspace{1em}
 ```
-<https://sys.pro/courses/mpt/>
+<https://nsu-syspro.github.io/courses/mpt/>
 ```{=latex}
 \end{minipage}
 ```
