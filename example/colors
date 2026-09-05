@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+function color {
+  printf "\e[38;5;${1}m"
+}
+
+ENDCOLOR=$'\e[0m'
+
 for i in {0..255}; do
-  printf "\e[38;5;${i}m%3i\e[0m " "$i"
+  COLOR=$(color $i)
+  printf "$COLOR%3i$ENDCOLOR " "$i"
   if [ $(( $i % 16 )) -eq 15 ]; then
     printf "\n"
   fi
