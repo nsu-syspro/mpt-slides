@@ -434,7 +434,7 @@ $ echo $?
 $ date foo || echo "Hello"
 date: invalid date 'foo'
 $ echo $?
-1
+0
 ```
 
 :::::
