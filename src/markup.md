@@ -89,6 +89,7 @@ Markdown, \LaTeX, HTML
 
 - [Pandoc](https://pandoc.org)
 - [Jupyter Notebook](https://jupyter.org)
+- [R Markdown](https://rmarkdown.rstudio.com)
 
 ## \centering Заметки
 
@@ -111,6 +112,7 @@ Markdown, \LaTeX, HTML
 
 - [GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [StackOverflow](https://stackoverflow.com/editing-help)
+- LLM / AI agents
 
 ## \centering Web-сайты
 
