@@ -215,6 +215,98 @@ no integer solutions:
 ::::
 :::
 
+# Typst
+
+::: columns
+:::: {.column width=45%}
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.7\linewidth}
+```
+
+::::: block
+
+## \centering Пример
+
+```{=latex}
+\lstset{,basicstyle={\scriptsize\ttfamily}}
+```
+
+```typst
+#set text(size: 12pt)
+
+The well known Pythagorean theorem
+$x^2 + y^2 = z^2$ was proved
+to be invalid for other exponents.
+Meaning the next equation has
+no integer solutions:
+
+$ x^n + y^n = z^n $
+```
+
+:::::
+
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: {.column width=55%}
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{\linewidth}
+```
+![](images/markup/typst-example.png)
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::
+
+# Typst
+
+::: columns
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.7\linewidth}
+```
+
+::::: block
+
+## \centering Полезные ресурсы
+
+- [GitHub](https://github.com/typst/typst)
+- [Online editor](https://typst.app)
+- [Tutorial](https://typst.app/docs/tutorial/)
+- [Guide for LaTeX Users](https://typst.app/docs/guides/for-latex-users/)
+
+:::::
+
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::: column
+
+```{=latex}
+\centering
+\begin{minipage}[c][.8\textheight][c]{.8\linewidth}
+```
+\centering
+![](images/markup/Typst-logo.pdf)
+```{=latex}
+\end{minipage}
+```
+
+::::
+:::
+
 # Визуализация
 
 ::: columns
